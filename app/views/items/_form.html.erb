@@ -1,0 +1,65 @@
+<%= form_for @item, :html => { :class => "form-horizontal item" } do |f| %>
+
+    <% if @item.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+
+  <div class="control-group">
+    <%= f.label t(:name), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@item[:name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:price), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'form-control' %>
+    </div>
+    <%= error_span(@item[:price]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:item_type), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :item_type, :class => 'form-control' %>
+    </div>
+    <%= error_span(@item[:item_type]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:item_company), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :item_company, :class => 'form-control' %>
+    </div>
+    <%= error_span(@item[:item_company]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:item_code), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :item_code, :class => 'form-control' %>
+    </div>
+    <%= error_span(@item[:item_code]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:item_image)  %>
+    <%= f.file_field :item_image %> 
+    <%= f.hidden_field :item_image_cache %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            items_path, :class => 'btn btn-default' %>
+
+<% end %>

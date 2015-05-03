@@ -1,0 +1,46 @@
+<%= form_for @tag, :html => { :class => "form-horizontal tag" } do |f| %>
+
+    <% if @tag.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @tag.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  
+  <div class="control-group">
+    <%= f.label :item_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :item_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@tag[:item_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :is_sold, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :is_sold, :class => 'form-control' %>
+    </div>
+    <%= error_span(@tag[:is_sold]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :tag_serial, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tag_serial, :class => 'form-control' %>
+    </div>
+    <%= error_span(@tag[:tag_serial]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            tags_path, :class => 'btn btn-default' %>
+
+<% end %>

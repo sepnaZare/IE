@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  date: 2015-04-05 12:52:30
+  total_cost: MyString
+
+two:
+  user_id: 1
+  date: 2015-04-05 12:52:30
+  total_cost: MyString

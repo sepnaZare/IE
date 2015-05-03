@@ -1,0 +1,75 @@
+<%= form_for @store, :html => { :class => "form-horizontal store" } do |f| %>
+
+    <% if @store.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @store.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+
+  <div class="control-group">
+    <%= f.label t(:company_name), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :company_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@store[:company_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:economic_code), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :economic_code, :class => 'form-control' %>
+    </div>
+    <%= error_span(@store[:economic_code]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:national_id), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :national_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@store[:national_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:register_number), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :register_number, :class => 'form-control' %>
+    </div>
+    <%= error_span(@store[:register_number]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:telephone_number1), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telephone_number1, :class => 'form-control' %>
+    </div>
+    <%= error_span(@store[:telephone_number1]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:telephone_number2), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telephone_number2, :class => 'form-control' %>
+    </div>
+    <%= error_span(@store[:telephone_number2]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label t(:company_address), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :company_address, :class => 'form-control' %>
+    </div>
+    <%= error_span(@store[:company_address]) %>
+  </div>
+
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            stores_path, :class => 'btn btn-default' %>
+
+<% end %>
