@@ -1,5 +1,10 @@
 <%= form_for @profile, :html => { :class => "form-horizontal profile" } do |f| %>
 
+<div class="login_form">
+  <section >
+
+   
+  <h1> ایجاد پروفایل جدید </h1>
     <% if @profile.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
@@ -73,9 +78,14 @@
     <%= error_span(@profile[:phone_number]) %>
   </div>
 
+<br />
+<br />
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            profiles_path, :class => 'btn btn-default' %>
+  <!--<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            profiles_path, :class => 'btn btn-default' %>-->
 
 <% end %>
+
+</section>
+</div>
