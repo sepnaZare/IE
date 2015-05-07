@@ -12,9 +12,9 @@
                             
                             <li>
                             
-                            
+                            <% if user_signed_in? %>
                             <%= link_to(" My Account ", "../../profiles/"+current_user.id.to_s , :class =>"fa fa-user")   %>
-
+                            <% end %> 
 
                             </li>
                             <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
