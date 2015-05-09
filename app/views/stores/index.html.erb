@@ -1,7 +1,54 @@
 <%- model_class = Store -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%=t '.title', :default => t("stores") %></h1>
 </div>
+
+
+<!-- 
+<% if not current_user.store_id.blank? %>
+  <%= link_to t('.new', :default => t("helpers.links.new")), new_store_path, :class => 'btn btn-primary' %>
+<% end %>
+ -->
+
+
+
+
+
+<div class="maincontent-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="latest-product">
+                    <div class="product-carousel">
+
+                      <% @stores.each do |store| %>
+                        <div class="single-product">
+                          <div class="product-f-image">
+                              <%= image_tag(store.store_image, :alt => "") %>
+                              <div class="product-hover">
+                                  <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                              </div>
+                          </div>
+                          <h2><%= link_to store.company_name, store_path(store)%></h2>
+                        </div>
+                      <% end %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End main content area -->
+
+
+
+
+
+
+
+
+<!-- 
 <table class="table table-striped">
   <thead>
     <tr>
@@ -35,6 +82,9 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_store_path,
-            :class => 'btn btn-primary' %>
+ -->
+
+
+
+
+

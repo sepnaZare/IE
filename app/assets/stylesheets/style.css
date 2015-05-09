@@ -376,7 +376,7 @@ z-index: 9;
   padding: 1px 10px;
 }
 
-.maincontent-area {padding-bottom: 170px; width: 113%;}
+.maincontent-area {padding-bottom: 170px;}
 
 .product-wid-title {
   font-family: raleway;
@@ -597,7 +597,7 @@ width: 10px;
 }
 input[type="text"], input[type="password"], input[type="email"], textarea {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 5px;
 }
 input[type="submit"], button[type=submit] {
     background: none repeat scroll 0 0 #1abc9c;

@@ -258,6 +258,8 @@ fa:
   add_item_to_store: 'افزودن کالا به فروشگاه'
   add_new_tag: 'افزودن محصول'
   Member_Login: 'ورود کاربران'
-
+  stores: 'فروشگاه‌ها'
+  items: 'محصولات'
+  store_image: 'تصویر فروشگاه'
 
   
