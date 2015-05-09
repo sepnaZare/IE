@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430033740) do
+ActiveRecord::Schema.define(version: 20150509075301) do
 
   create_table "availables", force: :cascade do |t|
     t.integer  "item_id"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20150430033740) do
     t.string   "company_address"
     t.integer  "user_id"
     t.integer  "current_item_id"
+    t.string   "store_image"
   end
 
   create_table "tags", force: :cascade do |t|

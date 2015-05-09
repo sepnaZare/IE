@@ -4,16 +4,17 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dd><div class="img-rounded"><%= image_tag @store.store_image, :size => '100x100' %></div></dd>
 	<dt><strong><%= model_class.human_attribute_name(t(:company_name)) %>:</strong></dt>
-  	<dd><%= @store.company_name %></dd>
-  	<dt><strong><%= model_class.human_attribute_name(t(:telephone_number1)) %>:</strong></dt>
-  	<dd><%= @store.telephone_number1 %></dd>
-  	<dt><strong><%= model_class.human_attribute_name(t(:telephone_number2)) %>:</strong></dt>
-  	<dd><%= @store.telephone_number2 %></dd>
-  	<dt><strong><%= model_class.human_attribute_name(t(:company_address)) %>:</strong></dt>
-  	<dd><%= @store.company_address %></dd>
-  	<dt><strong><%= 'مدیر فروشگاه' %>:</strong></dt>
-  	<dd><%= @store.creator.profile.first_name %></dd>
+	<dd><%= @store.company_name %></dd>
+	<dt><strong><%= model_class.human_attribute_name(t(:telephone_number1)) %>:</strong></dt>
+	<dd><%= @store.telephone_number1 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(t(:telephone_number2)) %>:</strong></dt>
+	<dd><%= @store.telephone_number2 %></dd>
+	<dt><strong><%= model_class.human_attribute_name(t(:company_address)) %>:</strong></dt>
+	<dd><%= @store.company_address %></dd>
+	<dt><strong><%= 'مدیر فروشگاه' %>:</strong></dt>
+	<dd><%= @store.creator.profile.first_name %></dd>
   	
 </dl>
 

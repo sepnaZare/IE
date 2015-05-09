@@ -65,6 +65,11 @@
     </div>
     <%= error_span(@store[:company_address]) %>
   </div>
+  <div class="control-group">
+    <%= f.label t(:store_image)  %>
+    <%= f.file_field :store_image %> 
+    <%= f.hidden_field :store_image_cache %>
+  </div>
 
 
 
