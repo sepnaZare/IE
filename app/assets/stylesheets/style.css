@@ -1030,7 +1030,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   background-color: #1abc9c;
 }
 
-.login_form span {
+.login_form .picture {
   display: block;
   position: relative;
   margin: 0 auto;

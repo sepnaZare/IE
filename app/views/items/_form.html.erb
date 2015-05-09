@@ -1,5 +1,13 @@
 <%= form_for @item, :html => { :class => "form-horizontal item" } do |f| %>
 
+<div class="login_form">
+  <section >
+  <br/>
+  <br/>
+ <h1>
+     محصول جدید
+ </h1>
+ <br/>
     <% if @item.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
@@ -63,3 +71,5 @@
             items_path, :class => 'btn btn-default' %>
 
 <% end %>
+</section>
+</div>
