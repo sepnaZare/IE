@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_filter :one_profile, only: [:new]
+  before_filter :no_delete, only: [:delete , :destroy]
 
   # GET /profiles
   # GET /profiles.json
@@ -91,5 +92,8 @@ class ProfilesController < ApplicationController
       if current_user.profile.present?
         redirect_to edit_profile_path(current_user.profile.id)
       end
+    end
+    def no_delete
+      redirect_to profile_path(current_user.profile.id)
     end
 end
