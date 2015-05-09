@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_filter :one_profile, only: [:new]
 
   # GET /profiles
   # GET /profiles.json
@@ -85,5 +86,10 @@ class ProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
       params.require(:profile).permit(:user_id, :first_name, :last_name, :ssn, :email, :mobile, :phone_number, :avatar, :avatar_cache)
+    end
+    def one_profile
+      if current_user.profile.present?
+        redirect_to edit_profile_path(current_user.profile.id)
+      end
     end
 end
