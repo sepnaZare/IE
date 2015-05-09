@@ -7,8 +7,12 @@
   <h1> ایجاد پروفایل جدید </h1>
     <% if @profile.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h3>
+      <div class="panel-heading" style="text-align: right">
+        <h3 class="panel-title" align="right">
+        <!-- 
+        <%=  @profile.errors.count.to_s %>  -->
+        خطاهایی که مانع ایجاد پروفایل شده است
+        </h3>
       </div>
       <div class="panel-body">
         <ul>
@@ -19,13 +23,6 @@
       </div>
     </div>
   <% end %>
-
-
-  <div class="control-group">
-    <%= f.label t(:avatar)  %>
-    <%= f.file_field :avatar %> 
-    <%= f.hidden_field :avatar_cache %>
-  </div>
 
 
   <!-- <div class="control-group">
@@ -76,6 +73,12 @@
       <%= f.text_field :phone_number, :class => 'form-control' %>
     </div>
     <%= error_span(@profile[:phone_number]) %>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label t(:avatar)  %>
+    <%= f.file_field :avatar %> 
+    <%= f.hidden_field :avatar_cache %>
   </div>
 
 <br />
