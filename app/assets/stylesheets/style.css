@@ -376,7 +376,7 @@ z-index: 9;
   padding: 1px 10px;
 }
 
-.maincontent-area {padding-bottom: 170px}
+.maincontent-area {padding-bottom: 170px; width: 113%;}
 
 .product-wid-title {
   font-family: raleway;
