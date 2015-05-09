@@ -96,9 +96,18 @@
                         <li><a href="">مشاهده ی لیست خرید </a></li>
                         <li ><a href="single-product.html">ارتباط با ما</a></li>
                         <li><a href="">درباره‌ی ما</a></li>
-                        <li><a href="../../items">محصولات</a></li>
-                        <li><a href="../../stores">فروشگاه‌ها</a></li>
-                        <li><a href="../../">صفحه‌ی اصلی</a></li>
+                        <li>
+                        
+                         <%= link_to("محصولات" , items_path , method: :get) %>
+                        </li>
+                        
+                        <li>
+                        <%= link_to("فروشگاه‌ها" , stores_path , method: :get) %>
+
+                        <li>
+                        <%= link_to("صفحه‌ی اصلی" , root_path , method: :get) %>
+
+                        </li>
                         
                     </ul>
                 </div>  
