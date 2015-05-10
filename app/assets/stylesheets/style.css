@@ -1030,6 +1030,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   background-color: #1abc9c;
 }
 
+
 .login_form .picture {
   display: block;
   position: relative;
@@ -1048,7 +1049,8 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   margin-bottom: 30px;
 }
 
-.login_form .field {
+
+.login_form input {
   width: 100%;
   background: #bdc3c7;
   border: none;
@@ -1058,6 +1060,25 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   text-align: center;
   font-size: 14px;
   color: #7f8c8d;
+  background-color: white;
+}
+
+.login_form .inline {
+  
+  
+  border: none;
+  height: 30px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #7f8c8d;
+  float:right;
+  display: inline;
+}
+
+.login_form .lable-style{
+  margin-top: 10px;
+
 }
 
 .login_form input:focus {

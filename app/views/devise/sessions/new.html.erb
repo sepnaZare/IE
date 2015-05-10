@@ -5,23 +5,27 @@
   <h1>ورود کاربران</h1>
 
   <%= f.label :email %><br />
-        <div class="field">
+        
           
           <%= f.email_field :email, autofocus: true %>
-        </div>
+        
   <%= f.label :password %><br />
-        <div class="field">
+
+        
           
           <%= f.password_field :password, autocomplete: "off" %>
-        </div>
+        
         
 
   <% if devise_mapping.rememberable? -%>
-
-        <%= f.label :remember_me %>
+   <div class="inline">
         <%= f.check_box :remember_me %>
-        
-  <% end %>
+  </div>
+  <div class="lable-style">
+        <%= f.label :remember_me %>
+  </div> 
+    <% end %>
+
   <br/>
   <br/>
   <div >

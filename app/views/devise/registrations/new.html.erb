@@ -8,25 +8,25 @@
   <h1>ثبت نام کاربران</h1>
 
   <%= f.label :email %><br />
-      <div class="field">
+      
         
         <%= f.email_field :email, autofocus: true %>
-      </div>
+      
 
   <%= f.label :password %><br/>
-      <div class="field">
+      
         
         <% if @validatable %>
          <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
         <% end %>
         <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+      
 
 <%= f.label :password_confirmation %><br />
-  <div class="field">
+  
     
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  
 <br/>
   <br/>
   <div >
