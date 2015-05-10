@@ -256,7 +256,7 @@ fa:
   Delete: 'حذف'
   already_have_item: 'این کالا در فروشگاه موجود است'
   add_item_to_store: 'افزودن کالا به فروشگاه'
-  add_new_tag: 'افزودن محصول'
+  add_new_tag: 'افزودن موجودی محصول'
   Member_Login: 'ورود کاربران'
   stores: 'فروشگاه‌ها'
   items: 'محصولات'
@@ -269,5 +269,10 @@ fa:
   item_name: 'نام کالا'
   available: 'کالای موجود'
   see_details: 'مشاهده جزئیات'
-
-  
+  new_store: 'ایجاد فروشگاه جدید'
+  Search: 'جستجو'
+  created_at: 'تاریخ ثبت'  
+  new: 'جدید'
+  New: 'جدید'
+  cancel: 'انصراف'
+  item: 'محصول'

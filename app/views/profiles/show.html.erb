@@ -1,25 +1,26 @@
 <%- model_class = Profile -%>
-<div class="page-header">
+<div class="page-header" style="text-align:right; padding-right: 50px">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-
+<dl class="dl-horizontal" style="text-align:right; padding-right: 100px; float:right">
+  <dt></dt>
   <dd><div class="img-rounded"><%= image_tag @profile.avatar, :size => '100x100' %></div></dd>
-  <dt><strong><%= model_class.human_attribute_name(t(:first_name)) %>:</strong></dt>
-  <dd><%= @profile.first_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(t(:last_name)) %>:</strong></dt>
-  <dd><%= @profile.last_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(t(:ssn)) %>:</strong></dt>
-  <dd><%= @profile.ssn %></dd>
-  <dt><strong><%= model_class.human_attribute_name(t(:email)) %>:</strong></dt>
-  <dd><%= @profile.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(t(:mobile)) %>:</strong></dt>
+  <dt style="float:right"><strong>:<%= model_class.human_attribute_name(t(:first_name)) %></strong></dt>
+  <dd style="float:right"><%= @profile.first_name %></dd>
+  <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:last_name)) %></strong></dt>
+  <dd style="float:right"><%= @profile.last_name %></dd>
+  <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:ssn)) %></strong></dt>
+  <dd style="float:right"><%= @profile.ssn %></dd>
+  <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:email)) %></strong></dt>
+  <dd style="float:right"><%= @profile.email %></dd>
+  <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:mobile)) %></strong></dt>
   <dd><%= @profile.mobile %></dd>
-  <dt><strong><%= model_class.human_attribute_name(t(:phone_number)) %>:</strong></dt>
-  <dd><%= @profile.phone_number %></dd>
+  <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:phone_number)) %></strong></dt>
+  <dd style="float:right"><%= @profile.phone_number %></dd>
 </dl>
 
+<div style="clear:both; padding-top:50px" align="center">
 <%= link_to t('.back', :default => t("helpers.links.back")),
               profiles_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -29,3 +30,5 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+</div>
+<div style="clear: both; padding-top:200px"></div>
