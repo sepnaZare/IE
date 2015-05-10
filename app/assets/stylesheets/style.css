@@ -1141,3 +1141,15 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .link_to_class {
   font-size: 15px;
 }
+
+.style_image{
+  box-shadow: 10px 10px 5px #ccc;
+  border-radius:2px;
+  border:1px grey;
+
+}
+.fa-right-text{
+  direction: rtl;
+}
+
+

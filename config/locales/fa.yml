@@ -203,6 +203,7 @@ fa:
         profile: 'پروفایل'
         cart: 'چرخ خرید'
         available: 'کالای موجود'
+        tag: 'تگ'
     errors:
       <<: *errors
     attributes:
@@ -229,7 +230,7 @@ fa:
   users: 'کاربران'
   stores: 'فروشگاه ها'
   items: 'کالاها'
-  tags: 'تگ ها'
+  tags: 'تگ‌ها'
   profiles: 'پروفایل ها'
   carts: 'چرخ های خرید'
   company_name: 'نام فروشگاه'
@@ -268,6 +269,7 @@ fa:
   item_company: 'کارخانه سازنده'
   item_name: 'نام کالا'
   available: 'کالای موجود'
+  tag: 'تگ'
   see_details: 'مشاهده جزئیات'
   new_store: 'ایجاد فروشگاه جدید'
   Search: 'جستجو'
@@ -276,3 +278,7 @@ fa:
   New: 'جدید'
   cancel: 'انصراف'
   item: 'محصول'
+  id: 'شناسه'
+  is_sold: 'وضعیت فروش'
+  tag_serial: 'سریال تگ'
+  this_item_not_in_your_store: 'این کالا در فروشگاه شما موجود نمی‌باشد'

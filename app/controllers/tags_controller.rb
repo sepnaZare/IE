@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
+  before_action :see_all_tags, only: [:index]
 
 
   # GET /tags
@@ -16,7 +17,24 @@ class TagsController < ApplicationController
   def index
     # byebug
     # @tags = Tag.all
-    @tags = Tag.search(params[:item]) 
+    # @available = Available.where(item_id: params[:item], store_id: current_user.store.id)
+    # @tags = Tag.where(item_id: in @available.item_id)
+    @tmptags = Tag.search(params[:item])
+    @available = Available.where(item_id: params[:item], store_id: current_user.store.id)
+    @list = [] unless @list
+    @tags = [] unless @tags
+    @available.each do |a|
+      @list << a.item_id
+    end
+    @tmptags.each do |t|
+      if @list.include?(t.item_id)
+        @tags << t
+      end
+    end
+    if @available.blank?
+      flash[:notice] = t("this_item_not_in_your_store")
+      redirect_to store_path(current_user.store.id) 
+    end
     @store = current_user.store
     @store.current_item_id = params[:item]
     @store.save
@@ -88,5 +106,11 @@ class TagsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tag_params
       params.require(:tag).permit(:item_id, :is_sold, :tag_serial)
+    end
+
+    def see_all_tags
+      if params[:item].blank?
+        redirect_to root_path
+      end
     end
 end
