@@ -10,7 +10,7 @@
                                 <li><%= link_to("خروج از سایت", destroy_user_session_path ,:class => "fa fa-user", :method=>'delete') %></li>
                                 <li><%= link_to("لیست خرید", root_path, :class => "fa fa-user", :method => 'get') %></li>
                                 <li><%= link_to("حساب کاربری", "../../profiles/"+current_user.id.to_s, :class => "fa fa-user", :method => 'get') %></li>
-                                <%= current_user.profile.first_name + ' ' + current_user.profile.last_name + '، خوش آمدید ' %>
+                                <%= ' خوش آمدید ' + current_user.email %>
                             
                             <% else %>
                                 <li><%= link_to("ورود به حساب کاربری", new_user_session_path ,:class => "fa fa-user", :method => 'get') %></li>
@@ -86,7 +86,7 @@
                         </li>
 
                         <% if user_signed_in? %>
-                            <% if not current_user.store.id.blank? %>
+                            <% if not current_user.store.blank? %>
                                 <li>
                                 <%= link_to("محصولات", items_path, method: :get) %>
                                 </li>
