@@ -282,3 +282,4 @@ fa:
   is_sold: 'وضعیت فروش'
   tag_serial: 'سریال تگ'
   this_item_not_in_your_store: 'این کالا در فروشگاه شما موجود نمی‌باشد'
+  cost: 'تومان'
