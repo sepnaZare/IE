@@ -1,34 +1,20 @@
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %> <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> <%= csrf_meta_tags %>
-<% if user_signed_in? %> <%= 'hello ' + current_user.email %> <% end %>
 
     <div class="header-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="user-menu">
+                    <div class="user-menu" align="right" margin-right:"100px">
                         <ul>
-                            
-                            <li>
-                            
                             <% if user_signed_in? %>
-                            <%= link_to(" My Account ", "../../profiles/"+current_user.id.to_s , :class =>"fa fa-user")   %>
-                            <% end %> 
-
-                            </li>
-                            <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                            <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
-                            <li><a href="../../home/checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-
-                            <% if user_signed_in? %>
-                            <li>
-                            <%= link_to(" Logout ", destroy_user_session_path ,:class => "fa fa-user", :method=>'delete') %>
-                            </li>
+                                <li><%= link_to("خروج از سایت", destroy_user_session_path ,:class => "fa fa-user", :method=>'delete') %></li>
+                                <li><%= link_to("لیست خرید", root_path, :class => "fa fa-user", :method => 'get') %></li>
+                                <li><%= link_to("حساب کاربری", "../../profiles/"+current_user.id.to_s, :class => "fa fa-user", :method => 'get') %></li>
+                                <%= current_user.profile.first_name + ' ' + current_user.profile.last_name + '، خوش آمدید ' %>
+                            
                             <% else %>
-                                <li>
-                                    <%= link_to("  Login ", new_user_session_path ,:class => "fa fa-user") %>
-                            </li>
+                                <li><%= link_to("ورود به حساب کاربری", new_user_session_path ,:class => "fa fa-user", :method => 'get') %></li>
                             <% end %>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -59,25 +45,29 @@
             </div>
         </div>
     </div> <!-- End header area -->
+
+
     
     <div class="site-branding-area">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="logo">
-                        <h1><a href="index.html"><span>سیستم خرید هوشمند </span></a></h1>
-</div>
+                        <h1><%= link_to("سیستم خرید هوشمند", root_path, method: :get) %><h1>
+                    </div>
                 </div>
                         
-                <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                     <div class="shopping-item">
                         <a href="cart.html">Cart - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                     </div> 
-                </div>
+                </div> -->
             </div>
         </div>
     </div> <!-- End site branding area -->
     
+
+
     <div class="mainmenu-area">
         <div class="container">
           <div class="row">
@@ -91,22 +81,24 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="">مشاهده ی لیست خرید </a></li>
-                        <li ><a href="single-product.html">ارتباط با ما</a></li>
-                        <li><a href="">درباره‌ی ما</a></li>
                         <li>
-                        
-                         <%= link_to("محصولات" , items_path , method: :get) %>
+                        <%= link_to("درباره‌ی ما", root_path, method: :get) %>
                         </li>
+
+                        <% if user_signed_in? %>
+                            <% if not current_user.store.id.blank? %>
+                                <li>
+                                <%= link_to("محصولات", items_path, method: :get) %>
+                                </li>
+                            <% end %>
+                        <% end %>
                         
                         <li>
-                        <%= link_to("فروشگاه‌ها" , stores_path , method: :get) %>
+                        <%= link_to("فروشگاه‌ها", stores_path, method: :get) %>
 
                         <li>
-                        <%= link_to("صفحه‌ی اصلی" , root_path , method: :get) %>
-
+                        <%= link_to("صفحه‌ی اصلی", root_path, method: :get) %>
                         </li>
-                        
                     </ul>
                 </div>  
           </div>
@@ -123,20 +115,21 @@
 
 <%= yield %>
 
-    <div class="footer-top-area">
+
+
+    <div class="footer-top-area" align = "center" >
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
-                        <h2>e<span>Electronics</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at?</p>
+                        <h3><span>سیستم خرید هوشمند</span></h3>
+                        <p>سیستم خرید هوشمند</p>
                         <div class="footer-social">
-                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                            <%= link_to("", root_path ,:class => "fa fa-facebook", :method => 'get') %>
+                            <%= link_to("", root_path ,:class => "fa fa-twitter", :method => 'get') %>
+                            <%= link_to("", root_path ,:class => "fa fa-linkedin", :method => 'get') %>
+                            <%= link_to("", root_path ,:class => "fa fa-pinterest", :method => 'get') %>
                         </div>
                     </div>
                 </div>
@@ -156,25 +149,23 @@
                 
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
-                        <h2 class="footer-wid-title">Categories</h2>
+                        <h2 class="footer-wid-title">فروشگاه‌ها</h2>
                         <ul>
-                            <li><a href="#">Mobile Phone</a></li>
-                            <li><a href="#">Home accesseries</a></li>
-                            <li><a href="#">LED TV</a></li>
-                            <li><a href="#">Computer</a></li>
-                            <li><a href="#">Gadets</a></li>
+                            <li><a href="http://www.shahrvand.ir">شهروند</a></li>
+                            <li><a href="http://www.hyperstariran.com">هایپر استار</a></li>
+                            <li><a href="http://www.refah.ir">رفاه</a></li>
                         </ul>                        
                     </div>
                 </div>
                 
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-newsletter">
-                        <h2 class="footer-wid-title">Newsletter</h2>
-                        <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                        <h2 class="footer-wid-title">خبرنامه</h2>
+                        <p>برای اطلاع از فروشگاه‌ها و محصولات جدید در خبرنامه عضو شوید</p>
                         <div class="newsletter-form">
                             <form action="#">
-                                <input type="email" placeholder="Type your email">
-                                <input type="submit" value="Subscribe">
+                                <input type="email" placeholder="ایمیل خود را وارد کنید">
+                                <input type="submit" value="عضویت در خبرنامه">
                             </form>
                         </div>
                     </div>
@@ -182,24 +173,27 @@
             </div>
         </div>
     </div> <!-- End footer top area -->
+
+
     
     <div class="footer-bottom-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy; 2015 eElectronics. All Rights Reserved. Coded with <i class="fa fa-heart"></i> by <a href="http://wpexpand.com" target="_blank">WP Expand</a></p>
+                        <p>تمامی حقوق این سایت متعلق به <a href="http://ece.ut.ac.ir" target="_blank"> دانشجویان دانشگاه تهران</a> می‌باشد &copy;</p>
+                        <!-- <p>&copy; 2015 eCart. All Rights Reserved. Coded with <i class="fa fa-heart"></i> by <a href="http://wpexpand.com" target="_blank">WP Expand</a></p> -->
                     </div>
                 </div>
                 
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <div class="footer-card-icon">
                         <i class="fa fa-cc-discover"></i>
                         <i class="fa fa-cc-mastercard"></i>
                         <i class="fa fa-cc-paypal"></i>
                         <i class="fa fa-cc-visa"></i>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div> <!-- End footer bottom area -->

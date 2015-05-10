@@ -198,9 +198,9 @@ z-index: 9;
   top: 0;
   width: 100%;
 }
-.slide-one {background-image: url(slide-1.jpg)}
-.slide-two {background-image: url(slide-2.jpg)}
-.slide-three {background-image: url(slide-3.jpg)}
+.slide-one {background-image: url(header-1.jpg)}
+.slide-two {background-image: url(header-2.jpg)}
+.slide-three {background-image: url(header-3.jpg)}
 .slide-text {color: #fff;font-size: 18px;font-weight: 200}
 .slide-text h2 {
   font-size: 45px;font-weight: 200
@@ -318,8 +318,8 @@ z-index: 9;
 .product-hover a i.fa {
     margin-right: 5px;
 }
-.product-hover a.add-to-cart-link {top: -25%;}
-.product-hover a.view-details-link { bottom: -25%;}
+.product-hover a.add-to-cart-link {top: -25%; font-size: 12px;}
+.product-hover a.view-details-link { bottom: -25%; font-size: 12px;}
 .single-product h2 {
     font-size: 18px;
     line-height: 25px;
@@ -380,7 +380,7 @@ z-index: 9;
 
 .product-wid-title {
   font-family: raleway;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 100;
   margin-bottom: 40px;
 }
@@ -421,7 +421,7 @@ z-index: 9;
     color: #fff;
     padding: 3px 15px;
     position: absolute;
-    right: 10px;
+    left: 10px;
     top: 3px;
 }
 .wid-view-more:hover {color: #fff;background-color: #222;text-decoration: none}
