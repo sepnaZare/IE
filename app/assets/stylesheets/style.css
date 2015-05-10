@@ -1041,15 +1041,26 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   background: url('user.png') center center no-repeat;
   border-radius: 50%;
   box-shadow: 1px 1px 2px rgba(0,0,0,.3);
-}
 
+}
+.login_form img{
+  border-radius: 30px;
+
+  
+}
 .login_form h1 {
   font-size: 24px;
   font-weight: 100;
   margin-bottom: 30px;
 }
 
+.login_form .log_table{
 
+  float:right;
+  text-align:right;
+   direction: rtl;
+   padding-right:40px;
+}
 .login_form input {
   width: 100%;
   background: #bdc3c7;
