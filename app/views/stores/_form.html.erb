@@ -1,4 +1,12 @@
+
 <%= form_for @store, :html => { :class => "form-horizontal store" } do |f| %>
+
+<div class="login_form" style="width=50%;">
+  <section >
+
+ <h1>
+ <%= t(:new_store)%>
+ </h1>
 
     <% if @store.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -78,3 +86,5 @@
             stores_path, :class => 'btn btn-default' %>
 
 <% end %>
+</section>
+</div>
