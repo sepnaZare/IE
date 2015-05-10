@@ -1068,6 +1068,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   
   border: none;
   height: 30px;
+   width: 15px;
   margin-bottom: 15px;
   border-radius: 5px;
   font-size: 14px;
