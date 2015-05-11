@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   get 'shoppings/card_detection' => 'shoppings#card_detection'
   resources :shoppings
 
+  get 'usages/show_with_cart' => 'usages#show_with_cart'
+
   resources :usages
+
+  # get 'usages/show_with_cart' => 'usages#show_with_cart'
+
 
   resources :carts
 

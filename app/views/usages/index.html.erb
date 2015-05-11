@@ -1,7 +1,19 @@
 <%- model_class = Usage -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+<div class="page-header" style="text-align:right; padding-right: 50px">
+  <h1><%=t '.title', :default => t('usages') %></h1>
 </div>
+
+<%= form_for :usage, :url =>{ :controller => :usages, :action => :show_with_cart}, :method => :get do 
+  |f| %>
+<p align="right" style="margin-right:50px">
+    <%= f.submit t("cart_id") %>
+    <%= f.number_field :cart_id %>
+  </p>
+  <% end %>
+
+
+
+<div class="container">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -36,3 +48,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_usage_path,
             :class => 'btn btn-primary' %>
+</div>

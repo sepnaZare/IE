@@ -5,6 +5,9 @@ class UsagesController < ApplicationController
   # GET /usages.json
   def index
     @usages = Usage.all
+    # byebug
+    # redirect_to usage_path(params[:id])
+
   end
 
   # GET /usages/1
@@ -16,6 +19,11 @@ class UsagesController < ApplicationController
       @price = @price + s.tag.item.price.tr('۰۱۲۳۴۵۶۷۸۹','0123456789').to_i
       # .tr!()
     end
+  end
+
+  def show_with_cart
+    usage = Usage.where(:cart_id => params[:usage][:cart_id].to_i).last
+    redirect_to :controller => :usages, :action => :show, :id => usage.id
   end
 
   # GET /usages/new
@@ -34,7 +42,7 @@ class UsagesController < ApplicationController
     # @usage = Usage.new
     # @usage.user_id = params[:user_id]
     # @usage.cart_id = params[:cart_id]
-
+    # byebug
     @user = User.find(params[:usage][:user_id].to_i)
     @cart = Cart.find(params[:usage][:cart_id].to_i)
     @usage = @user.usages.new()
@@ -79,6 +87,7 @@ class UsagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_usage
+      # byebug
       @usage = Usage.find(params[:id])
     end
 
