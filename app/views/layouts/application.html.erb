@@ -83,22 +83,22 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li>
-                        <%= link_to("درباره‌ی ما", root_path, method: :get) %>
+                        <%= link_to("درباره‌ی ما", root_path, :class => "fonts-family", method: :get) %>
                         </li>
 
                         <% if user_signed_in? %>
                             <% if not current_user.store.blank? %>
                                 <li>
-                                <%= link_to("محصولات", items_path, method: :get) %>
+                                <%= link_to("محصولات", items_path, :class => "fonts-family", method: :get) %>
                                 </li>
                             <% end %>
                         <% end %>
                         
                         <li>
-                        <%= link_to("فروشگاه‌ها", stores_path, method: :get) %>
+                        <%= link_to("فروشگاه‌ها", stores_path, :class => "fonts-family", method: :get) %>
 
                         <li>
-                        <%= link_to("صفحه‌ی اصلی", root_path, method: :get) %>
+                        <%= link_to("صفحه‌ی اصلی", root_path, :class => "fonts-family", method: :get) %>
                         </li>
                     </ul>
                 </div>  
@@ -141,7 +141,7 @@
                         <ul>
                             <% if user_signed_in? %>
                                 <li><%= link_to(" خروج از سایت", destroy_user_session_path ,:class => "footer-wid", :method=>'delete') %></li>
-                                <li><%= link_to(" لیست خرید", root_path, :class => "ooter-wid", :method => 'get') %></li>
+                                <li><%= link_to(" لیست خرید", root_path, :class => "footer-wid", :method => 'get') %></li>
                                 <li><%= link_to(" حساب کاربری", "../../profiles/"+current_user.id.to_s, :class => "footer-wid", :method => 'get') %></li>
                             
                             <% else %>
@@ -185,7 +185,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="copyright" font-family="X Koodak">
+                    <div class="copyright">
                         <p>تمامی حقوق این سایت متعلق به <a href="http://ece.ut.ac.ir" target="_blank"> دانشجویان دانشگاه تهران</a> می‌باشد &copy;</p>
                         <!-- <p>&copy; 2015 eCart. All Rights Reserved. Coded with <i class="fa fa-heart"></i> by <a href="http://wpexpand.com" target="_blank">WP Expand</a></p> -->
                     </div>
