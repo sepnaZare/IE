@@ -3,49 +3,62 @@
   <h1><%=t '.title', :default => t('usages') %></h1>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+
 <%= form_for :usage, :url =>{ :controller => :usages, :action => :show_with_cart}, :method => :get do 
   |f| %>
-<p align="right" style="margin-right:50px">
+<p align="center" style="margin-right:50px">
     <%= f.submit t("cart_id") %>
     <%= f.number_field :cart_id %>
   </p>
   <% end %>
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <div class="container">
-<table class="table table-striped">
+<table class="table table-striped" dir = "rtl">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:cart_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th style="text-align:center"><%= model_class.human_attribute_name(t(:id)) %></th>
+      <th style="text-align:center"><%= model_class.human_attribute_name(t(:cart_id)) %></th>
+      <th style="text-align:center"><%= model_class.human_attribute_name(t(:created_at)) %></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody align="center">
     <% @usages.each do |usage| %>
       <tr>
         <td><%= link_to usage.id, usage_path(usage) %></td>
-        <td><%= usage.user_id %></td>
         <td><%= usage.cart_id %></td>
         <td><%=l usage.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_usage_path(usage), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      usage_path(usage),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<br>
+<br>
+<br>
+<br>
+
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_usage_path,
             :class => 'btn btn-primary' %>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

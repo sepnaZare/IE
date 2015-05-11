@@ -3,12 +3,13 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal"  style="text-align:right; margin-right: 20%; padding-top: 50px; padding-bottom:50px; padding-left:5%; float:right">
+<dl class="dl-horizontal" style="text-align:right; margin-right: 20%; padding-top: 50px; padding-bottom:50px; padding-right:20%; float:center">
   <div class="row">
-    <div class="col-md-3" style="float:right">
+    <div class="col-md-6" style="float:right">
       <dt></dt>
-      <dd><div class="img-rounded"><%= image_tag @available.item.item_image, :size => '1200x700' , :class => 'style_image' %></div></dd>
+      <dd><div class="img-rounded"><%= image_tag @available.item.item_image, :class => 'style_image' %></div></dd>
     </div>
+    <br/><br/>
     <div class="col-md-1"></div>
     <div class="col-md-8" style="float:right; padding-left:0; padding-right:2%">
       <dt style="float:right; clear:both; margin-top:15px"><strong>:<%= t('item_id') %></strong></dt>

@@ -23,7 +23,11 @@ class UsagesController < ApplicationController
 
   def show_with_cart
     usage = Usage.where(:cart_id => params[:usage][:cart_id].to_i).last
-    redirect_to :controller => :usages, :action => :show, :id => usage.id
+    if not usage.blank?
+      redirect_to :controller => :usages, :action => :show, :id => usage.id
+    else
+      redirect_to :back
+    end
   end
 
   # GET /usages/new

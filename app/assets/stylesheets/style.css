@@ -274,8 +274,14 @@ z-index: 9;
 
 
 .product-f-image {
-    position: relative;
+  position: relative;
 }
+
+.product-f-image img {
+  width: 150px;
+  height: 200px;
+}
+
 .product-hover {
     height: 100%;
     left: 0;
