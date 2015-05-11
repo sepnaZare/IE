@@ -204,6 +204,7 @@ fa:
         cart: 'چرخ خرید'
         available: 'کالای موجود'
         tag: 'تگ'
+        usage: 'خریدهای کاربر'
     errors:
       <<: *errors
     attributes:
@@ -283,3 +284,4 @@ fa:
   tag_serial: 'سریال تگ'
   this_item_not_in_your_store: 'این کالا در فروشگاه شما موجود نمی‌باشد'
   cost: 'تومان'
+  cart_id: 'شناسه چرخ خرید'

@@ -3,6 +3,7 @@
   <h1><%=t '.title', :default => t('tags') %></h1>
 </div>
 
+<div class="container">
 <table class="table table-striped" dir="rtl">
   <thead>
     <tr>
@@ -27,7 +28,7 @@
         <td><%= tag.item.price%></td>
         <td><%= tag.is_sold %></td>
         <td><%= tag.tag_serial %></td>
-        <td><%=l tag.created_at.strftime("%y-%m-%d") %></td>
+        <td><%= tag.created_at.strftime("%y-%m-%d") %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_tag_path(tag), :class => 'btn btn-default btn-xs' %>
@@ -41,10 +42,11 @@
     <% end %>
   </tbody>
 </table>
-
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_tag_path,
             :class => 'btn btn-primary' %>
+
+</div>
 
 <div style="clear: both; padding-top:100px"></div>
 

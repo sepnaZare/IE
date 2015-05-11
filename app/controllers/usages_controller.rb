@@ -10,6 +10,12 @@ class UsagesController < ApplicationController
   # GET /usages/1
   # GET /usages/1.json
   def show
+    @shoppings = Shopping.all.where(:usage_id => params[:id])
+    @price = 0
+    @shoppings.each do |s|
+      @price = @price + s.tag.item.price.tr('۰۱۲۳۴۵۶۷۸۹','0123456789').to_i
+      # .tr!()
+    end
   end
 
   # GET /usages/new

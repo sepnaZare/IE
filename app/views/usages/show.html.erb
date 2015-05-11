@@ -1,15 +1,36 @@
 <%- model_class = Usage -%>
-<div class="page-header">
+<div class="page-header" style="text-align:right; padding-right: 50px">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @usage.user_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cart_id) %>:</strong></dt>
-  <dd><%= @usage.cart_id %></dd>
+<div class="container">
+<dl class="dl-horizontal"  style="text-align:right; margin-right: 20%; padding-top: 50px; padding-bottom:50px; float:right">
+  <!-- <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @usage.user_id %></dd> -->
+  <dt style="float:right; clear:both; margin-top:15px"><strong>:<%= model_class.human_attribute_name(t(:cart_id))%></strong></dt>
+  <dd style="float:right; margin-top:15px"><%= @usage.cart_id.to_s.tr('0123456789','۰۱۲۳۴۵۶۷۸۹') %></dd>
+  </br>
+  </br>
+  </br>
+  <% @shoppings.each do |s| %>
+    <dt style="float:right; clear:right; margin:15px 40px 0px 0px; padding-left:20px; width:auto">:کالا</dt>
+    <dd style="float:right; margin:15px 0px 0px 0px;"><%= s.tag.item.name%></dd>
+    <dt style="float:right; margin:15px 30px 0px 0px; padding-left:20px; width:auto">:  قیمت</dt>
+    <dd style="float:right; margin:15px 0px 0px 0px"><%= s.tag.item.price%></dd>
+  <% end %>
+  
+  <dt style="float:right; clear:both; margin-top:60px; margin-right:200px; width:auto">
+    <strong><%= 'جمع کل'%></strong>
+  </dt>
+  <dd style="float:right; margin-top:60px; padding-right:20px;">
+     <%= @price.to_s.tr('0123456789','۰۱۲۳۴۵۶۷۸۹')%>
+  </dd>
 </dl>
+<div style="clear:both; margin-right:100px; margin-bottom:100px; margin-top:30px" align="center">
+  <%= link_to 'تایید و پرداخت' , root_path %>
+</div>
 
+</div>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               usages_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -19,3 +40,4 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+

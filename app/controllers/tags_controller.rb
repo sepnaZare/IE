@@ -12,6 +12,7 @@ class TagsController < ApplicationController
     @tag.item_id = current_user.store.current_item_id
     @tag.tag_serial = params[:tag_serial]
     @tag.save
+    redirect_to tags_path(:item => current_user.store.current_item_id)
   end
 
   def index
@@ -92,7 +93,7 @@ class TagsController < ApplicationController
   def destroy
     @tag.destroy
     respond_to do |format|
-      format.html { redirect_to tags_url, notice: 'Tag was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Tag was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
