@@ -27,7 +27,7 @@ h6 {
     font-weight: 700;
     margin: 0 0 15px;
 }
-body { font-family: 'Titillium Web', sans-serif; }
+body { font-family: 'X Koodak', sans-serif; }
 
 
 
@@ -79,7 +79,7 @@ float : right ;
 }
 
 .mainmenu-area {background: none repeat scroll 0 0 #1abc9c;
-font-family: "Roboto Condensed",sans-serif;
+font-family: "X Koodak",sans-serif;
 text-transform: uppercase;
 width: 100%;
 z-index: 999;}
@@ -206,7 +206,7 @@ z-index: 9;
   font-size: 45px;font-weight: 200
 }
 
-.slide-content {position: relative;z-index: 9;padding: 30px}
+.slide-content {position: relative;z-index: 9;padding: 30px;}
 .slide-content:before {
   background: none repeat scroll 0 0 #000;
   content: "";
@@ -262,7 +262,7 @@ z-index: 9;
 .single-promo:hover {color: #fff;background: #222;border-color: #222}
 
 .section-title {
-  font-family: "Raleway",sans-serif;
+  font-family: "X Koodak",sans-serif;
   font-size: 40px;
   font-weight: 100;
   margin-bottom: 50px;
@@ -379,8 +379,8 @@ z-index: 9;
 .maincontent-area {padding-bottom: 170px;}
 
 .product-wid-title {
-  font-family: raleway;
-  font-size: 25px;
+  font-family: "X Koodak";
+  font-size: 23px;
   font-weight: 100;
   margin-bottom: 40px;
 }
@@ -444,15 +444,17 @@ padding: 35px 0 180px;}
   color: #1abc9c;
 }
 .footer-wid-title {
-  font-family: raleway;
-  font-size: 30px;
+  font-family: "X Koodak";
+  font-size: 23px;
   font-weight: 100;color: #fff
 }
 
-.footer-about-us h2 {
+.footer-about-us h3 {
+  font-family: "X Koodak";
   font-weight: 200;
 }
 .footer-menu ul {
+    font-family: "X Koodak";
     list-style: outside none none;
     margin: 0;
     padding: 0;
@@ -486,6 +488,7 @@ padding: 35px 0 180px;}
 
 
 .newsletter-form input[type="email"] {
+    text-align: right;
     background: none repeat scroll 0 0 #fff;
     border: medium none;
     margin-bottom: 10px;
@@ -569,7 +572,7 @@ width: 10px;
 .product-big-title-area {background: url(img/crossword.png) repeat scroll 0 0 #1ABC9C}
 
 .product-bit-title h2 {
-  font-family: raleway;
+  font-family: "X Koodak";
   font-size: 50px;
   font-weight: 200;
   margin: 0;

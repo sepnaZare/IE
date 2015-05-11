@@ -1,19 +1,20 @@
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %> <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> <%= csrf_meta_tags %>
 
-    <div class="header-area">
+    <div class="header-area" font-family: "X Koodak">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
                     <div class="user-menu" align="right" margin-right:"100px">
                         <ul>
                             <% if user_signed_in? %>
-                                <li><%= link_to("خروج از سایت", destroy_user_session_path ,:class => "fa fa-user", :method=>'delete') %></li>
-                                <li><%= link_to("لیست خرید", root_path, :class => "fa fa-user", :method => 'get') %></li>
-                                <li><%= link_to("حساب کاربری", "../../profiles/"+current_user.id.to_s, :class => "fa fa-user", :method => 'get') %></li>
+                                <li><%= link_to(" خروج از سایت", destroy_user_session_path ,:class => "fa fa-user fa-right-text", :method=>'delete') %></li>
+                                <li><%= link_to(" لیست خرید", root_path, :class => "fa fa-user fa-right-text", :method => 'get') %></li>
+                                <li><%= link_to(" حساب کاربری", "../../profiles/"+current_user.id.to_s, :class => "fa fa-user fa-right-text", :method => 'get') %></li>
                                 <%= ' خوش آمدید ' + current_user.email %>
                             
                             <% else %>
-                                <li><%= link_to("ورود به حساب کاربری", new_user_session_path ,:class => "fa fa-user", :method => 'get') %></li>
+                                <li><%= link_to(" عضویت در سایت", new_user_registration_path ,:class => "fa fa-user fa-right-text", :method => 'get') %></li>
+                                <li><%= link_to(" ورود به حساب کاربری", new_user_session_path ,:class => "fa fa-user fa-right-text", :method => 'get') %></li>
                             <% end %>
                         </ul>
                     </div>
