@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %> <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> <%= csrf_meta_tags %>
 
-    <div class="header-area" font-family: "X Koodak">
+    <div class="header-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -108,11 +108,11 @@
     
 
 
-<div align="center" style="font-size:15;">
+<!-- <div align="center" style="font-size:15;">
 <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "alert alert-info" %>
 <% end %>
-</div>
+</div> -->
 
 <%= yield %>
 
@@ -125,7 +125,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
                         <h3><span>سیستم خرید هوشمند</span></h3>
-                        <p>سیستم خرید هوشمند</p>
+                        <p></p>
                         <div class="footer-social">
                             <%= link_to("", root_path ,:class => "fa fa-facebook", :method => 'get') %>
                             <%= link_to("", root_path ,:class => "fa fa-twitter", :method => 'get') %>
@@ -137,13 +137,17 @@
                 
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-menu">
-                        <h2 class="footer-wid-title">User Navigation </h2>
+                        <h2 class="footer-wid-title">دسترسی سریع</h2>
                         <ul>
-                            <li><a href="#">My account</a></li>
-                            <li><a href="#">Order history</a></li>
-                            <li><a href="#">Wishlist</a></li>
-                            <li><a href="#">Vendor contact</a></li>
-                            <li><a href="#">Front page</a></li>
+                            <% if user_signed_in? %>
+                                <li><%= link_to(" خروج از سایت", destroy_user_session_path ,:class => "footer-wid", :method=>'delete') %></li>
+                                <li><%= link_to(" لیست خرید", root_path, :class => "ooter-wid", :method => 'get') %></li>
+                                <li><%= link_to(" حساب کاربری", "../../profiles/"+current_user.id.to_s, :class => "footer-wid", :method => 'get') %></li>
+                            
+                            <% else %>
+                                <li><%= link_to(" عضویت در سایت", new_user_registration_path ,:class => "footer-wid", :method => 'get') %></li>
+                                <li><%= link_to(" ورود به حساب کاربری", new_user_session_path ,:class => "footer-wid", :method => 'get') %></li>
+                            <% end %>
                         </ul>                        
                     </div>
                 </div>
@@ -162,7 +166,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-newsletter">
                         <h2 class="footer-wid-title">خبرنامه</h2>
-                        <p>برای اطلاع از فروشگاه‌ها و محصولات جدید در خبرنامه عضو شوید</p>
+                        <p></p>
                         <div class="newsletter-form">
                             <form action="#">
                                 <input type="email" placeholder="ایمیل خود را وارد کنید">
@@ -181,7 +185,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="copyright">
+                    <div class="copyright" font-family="X Koodak">
                         <p>تمامی حقوق این سایت متعلق به <a href="http://ece.ut.ac.ir" target="_blank"> دانشجویان دانشگاه تهران</a> می‌باشد &copy;</p>
                         <!-- <p>&copy; 2015 eCart. All Rights Reserved. Coded with <i class="fa fa-heart"></i> by <a href="http://wpexpand.com" target="_blank">WP Expand</a></p> -->
                     </div>

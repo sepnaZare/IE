@@ -124,25 +124,25 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo">
                         <i class="fa fa-refresh"></i>
-                        <p>30 Days return</p>
+                        <p>صرفه‌جویی در زمان</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo">
-                        <i class="fa fa-truck"></i>
-                        <p>Free shipping</p>
+                        <i class="fa fa-shopping-cart"></i>
+                        <p>چرخ خرید هوشمند</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo">
                         <i class="fa fa-lock"></i>
-                        <p>Secure payments</p>
+                        <p>پرداخت ایمن</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-promo">
                         <i class="fa fa-gift"></i>
-                        <p>New products</p>
+                        <p>محصولات جدید</p>
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@
                                         <div class="product-f-image">
                                             <%= image_tag(item.item_image, :alt => "") %>
                                             <div class="product-hover">
-                                                <%= link_to(t('see_details'), item_path(item) ,:class => "fa fa-link view-details-link", :method=>'get') %>
+                                                <%= link_to(t('see_details'), item_path(item) ,:class => "fa fa-link view-details-link fa-right-text", :method=>'get') %>
                                             </div>
                                         </div>
 
@@ -210,7 +210,7 @@
                                         <div class="product-f-image">
                                             <%= image_tag(store.store_image, :alt => "") %>
                                             <div class="product-hover">
-                                                <%= link_to(store.company_name, store_path(store) ,:class => "fa fa-link view-details-link", :method=>'get') %>
+                                                <%= link_to(store.company_name, store_path(store) ,:class => "fa fa-link view-details-link fa-right-text", :method=>'get') %>
                                             </div>
                                         </div>
                                     </div>

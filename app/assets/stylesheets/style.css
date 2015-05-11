@@ -159,7 +159,7 @@ z-index: 999;}
 .mainmenu-area .nav > li > a:focus {color: #000}
 
 .slider-area {clear: both}
-.slider-area, .promo-area, .brands-area, .maincontent-area, .footer-top-area, .product-widget-area, .product-breadcroumb-area, .single-product-area {position: relative;overflow: hidden}
+.slider-area, .promo-area, .brands-area, .maincontent-area, .footer-top-area, .product-widget-area, .product-breadcroumb-area, .single-product-area {position: relative;overflow: hidden;}
 .zigzag-bottom {}
 .slide-text-wrapper {
   height: 700px;
@@ -439,7 +439,7 @@ color: #999;
 padding: 35px 0 180px;}
 
 
-.footer-bottom-area {background: #000;color: #fff}
+.footer-bottom-area {background: #000;color: #fff;}
 .footer-about-us span {
   color: #1abc9c;
 }
