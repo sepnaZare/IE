@@ -13,9 +13,16 @@
 
 @font-face {
   font-family:'Koodak';
-  src:url('BKoodakOutline.ttf');
-  src:url('BKoodakBold.ttf');
-  src:url('XKoodak.ttf');
+  src:url('BKoodakBold.eot?#') format('eot'),    
+      url('BKoodakBold.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:'KoodakOutline';
+  src:url('BKoodakOutline.eot?#') format('eot'),    
+      url('BKoodakOutline.ttf') format('truetype'); 
   font-weight: normal;
   font-style: normal;
 }
