@@ -8,12 +8,13 @@
                         <ul>
                             <% if user_signed_in? %>
                                 <li><%= link_to(" خروج از سایت", destroy_user_session_path ,:class => "fa fa-user fa-right-text", :method=>'delete') %></li>
+                                <li><%= link_to(" فروشگاه من", store_path(current_user.store.id), :class => "fa fa-user fa-right-text", :method => 'get') %></li>
                                 <li><%= link_to(" لیست خرید", usages_path, :class => "fa fa-user fa-right-text", :method => 'get') %></li>
                                 <li><%= link_to(" حساب کاربری", "../../profiles/"+current_user.id.to_s, :class => "fa fa-user fa-right-text", :method => 'get') %></li>
-                                <%= ' خوش آمدید ' + current_user.email %>
                             
                             <% else %>
                                 <li><%= link_to(" عضویت در سایت", new_user_registration_path ,:class => "fa fa-user fa-right-text", :method => 'get') %></li>
+                                <li><%= link_to(" لیست خرید", usages_path, :class => "fa fa-user fa-right-text", :method => 'get') %></li>
                                 <li><%= link_to(" ورود به حساب کاربری", new_user_session_path ,:class => "fa fa-user fa-right-text", :method => 'get') %></li>
                             <% end %>
                         </ul>

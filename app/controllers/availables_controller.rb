@@ -1,6 +1,6 @@
 class AvailablesController < ApplicationController
   before_action :set_available, only: [:show, :edit, :update, :destroy]
-  before_filter :restrict_access, except: [:create, :destroy, :show]
+  # before_filter :restrict_access, except: [:create, :destroy, :show]
 
   # GET /availables
   # GET /availables.json

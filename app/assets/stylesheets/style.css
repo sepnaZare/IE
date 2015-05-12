@@ -1160,6 +1160,12 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   border:1px grey;
 
 }
+
+.store_image img{
+  width: 500px;
+  height: 150px;
+}
+
 .fa-right-text{
   direction: rtl;
 }
