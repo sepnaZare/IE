@@ -3,9 +3,9 @@
   <h1><%=t '.title', :default => t("item") %></h1>
 </div>
 
-<dl class="dl-horizontal" style="text-align:right; padding-right: 100px; float:right">
+<dl class="dl-horizontal" style="text-align:right; margin-right: 20%; padding-top: 50px; padding-bottom:50px; padding-right:20%; float:center">
   <dt></dt>
-  <dd><div class="img-rounded"><%= image_tag @item.item_image, :size => '100x100' %></div></dd>
+  <dd><div class="img-rounded"><%= image_tag @item.item_image %></div></dd>
   <dt style="float:right"><strong>:<%= model_class.human_attribute_name(t(:name)) %></strong></dt>
   <dd style="float:right"><%= @item.name %></dd>
   <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:price)) %></strong></dt>
@@ -19,7 +19,7 @@
 </dl>
 
 
-<div align="right" style="clear:both; margin-right:100px">
+<div style="clear:both; padding-top:50px" align="center">
 <%= link_to t('.back', :default => t("helpers.links.back")),
               items_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),

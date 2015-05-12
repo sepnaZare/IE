@@ -1,3 +1,28 @@
+/*
+@font-face {
+  font-family: 'Koodak';
+  src:url('icomoon.eot');
+  src:url('icomoon.eot?#iefix') format('embedded-opentype'),
+    url('icomoon.svg#icomoon') format('svg'),
+    url('icomoon.woff') format('woff'),
+    url('icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+
+@font-face {
+  font-family:'Koodak';
+  src:url('BKoodakOutline.ttf');
+  src:url('BKoodakBold.ttf');
+  src:url('XKoodak.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
 .floatleft { float: left }
 .floatright { float: right }
 .alignleft {
@@ -27,7 +52,7 @@ h6 {
     font-weight: 700;
     margin: 0 0 15px;
 }
-body { font-family: 'X Koodak', sans-serif; }
+body { font-family: 'Koodak', sans-serif; }
 
 
 
@@ -79,7 +104,7 @@ float : right ;
 }
 
 .mainmenu-area {background: none repeat scroll 0 0 #1abc9c;
-font-family: "X Koodak",sans-serif;
+font-family: 'Koodak', sans-serif;
 text-transform: uppercase;
 width: 100%;
 z-index: 999;}
@@ -265,7 +290,7 @@ z-index: 9;
 .single-promo:hover {color: #fff;background: #222;border-color: #222}
 
 .section-title {
-  font-family: "X Koodak",sans-serif;
+  font-family: 'Koodak', sans-serif;
   font-size: 40px;
   font-weight: 100;
   margin-bottom: 50px;
@@ -388,7 +413,7 @@ z-index: 9;
 .maincontent-area {padding-bottom: 170px;}
 
 .product-wid-title {
-  font-family: "X Koodak";
+  font-family: 'Koodak', sans-serif;
   font-size: 23px;
   font-weight: 100;
   margin-bottom: 40px;
@@ -453,17 +478,17 @@ padding: 35px 0 180px;}
   color: #1abc9c;
 }
 .footer-wid-title {
-  font-family: "X Koodak";
+  font-family: 'Koodak', sans-serif;
   font-size: 23px;
   font-weight: 100;color: #fff
 }
 
 .footer-about-us h3 {
-  font-family: "X Koodak";
+  font-family: 'Koodak', sans-serif;
   font-weight: 200;
 }
 .footer-menu ul {
-    font-family: "X Koodak";
+    font-family: 'Koodak', sans-serif;
     list-style: outside none none;
     margin: 0;
     padding: 0;
@@ -581,7 +606,7 @@ width: 10px;
 .product-big-title-area {background: url(img/crossword.png) repeat scroll 0 0 #1ABC9C}
 
 .product-bit-title h2 {
-  font-family: "X Koodak";
+  font-family: 'Koodak', sans-serif;
   font-size: 50px;
   font-weight: 200;
   margin: 0;
@@ -1180,5 +1205,10 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 
 .fonts-family {
-  font-family: "X Koodak";font-weight: 200;color: #fff;font-size: 18px;font-weight: 200
+  font-family: 'Koodak', sans-serif;
+  font-weight: 200;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 200;
 }
+
