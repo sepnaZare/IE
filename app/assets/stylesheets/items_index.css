@@ -1,6 +1,6 @@
 
 body {
-        font-family:Arial, Helvetica, Sans-Serif; 
+
         font-size:0.8em;
 }
 
@@ -37,6 +37,11 @@ body {
         text-align:left;
 }
 
+.new_table tr th , .new_table tr td{ 
+        font-family: 'Koodak', sans-serif;
+}
+
+
 .new_table td { 
         background:#E6FAF5 none repeat-x scroll center left; 
         color:#000; 
@@ -70,6 +75,7 @@ body {
 
 .new_table tr td div ul li{
         margin-bottom:5px;
+        font-family: 'Koodak', sans-serif;
 }
 
 .first_div_in_table{
