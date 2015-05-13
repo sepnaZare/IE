@@ -1,4 +1,3 @@
-
 body {
 
         font-size:0.8em;
@@ -48,8 +47,13 @@ body {
         padding:7px 15px; 
 }
 
+.new_table tr:not(.odd) td{
+        background-color: #F2F2F2;
+}
+
+
 .new_table tr.odd td { 
-        background:#fff url(row_bkg.png) repeat-x scroll center left; 
+        background:#E8FAF6 repeat-x scroll center left; 
         cursor: pointer;
 }
 
