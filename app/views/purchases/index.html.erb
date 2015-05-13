@@ -22,9 +22,9 @@
         <td><%= purchase.total_cost %></td>
         <td><%=l purchase.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('edit', :default => t("helpers.links.edit")),
                       edit_purchase_path(purchase), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('destroy', :default => t("helpers.links.destroy")),
                       purchase_path(purchase),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
@@ -35,6 +35,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('new', :default => t("helpers.links.new")),
             new_purchase_path,
             :class => 'btn btn-primary' %>

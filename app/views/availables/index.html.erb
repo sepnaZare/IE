@@ -14,7 +14,7 @@
   </tr>
     <% @availables.each do |available| %>
       <tr align="center">
-        <td><%= available.item.name %></td>
+        <td><%= link_to available.item.name , available_path(available)%></td>
         <td>
           <%= available.item_count %>
         </td>
