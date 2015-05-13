@@ -93,6 +93,7 @@ class ShoppingsController < ApplicationController
       if Tag.find_by(tag_serial: params[:tag_serial], is_sold: false) 
         @content = "ok"
         @tag = Tag.find_by(tag_serial: params[:tag_serial])
+        
         if not @usage = Usage.find_by(cart_id: params[:cart_id])
           @usage = Usage.new
           @usage.cart_id = params[:cart_id]

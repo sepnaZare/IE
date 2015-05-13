@@ -1,4 +1,13 @@
 jQuery(document).ready(function($){
+    $(".new_table tr:odd").addClass("odd");
+    $(".new_table tr:not(.odd)").hide();
+    $(".new_table tr:first-child").show();
+    
+    $(".new_table tr.odd").click(function(){
+        $(this).next("tr").toggle();
+        $(this).find(".arrow").toggleClass("up");
+    });
+    // $("#report").jExpand();
     
     // jQuery sticky Menu
     
@@ -85,4 +94,5 @@ jQuery(document).ready(function($){
         offset: 95
     })      
 });
+
 

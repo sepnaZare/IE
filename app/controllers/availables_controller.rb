@@ -29,7 +29,7 @@ class AvailablesController < ApplicationController
     @available = Available.new
     @available.item_id = params[:item_id]
     @available.store_id = params[:store_id]
-    @available.item_count = params[:item_count]
+    @available.item_count = 0
 
     respond_to do |format|
       if @available.save

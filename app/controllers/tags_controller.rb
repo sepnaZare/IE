@@ -11,7 +11,14 @@ class TagsController < ApplicationController
     @tag.is_sold = false
     @tag.item_id = current_user.store.current_item_id
     @tag.tag_serial = params[:tag_serial]
+    @tag.store_id = current_user.store.id
     @tag.save
+    @available = Available.where(item_id: @tag.item_id, store_id: current_user.store.id).last
+    #  Availabe.find(:item_id => @tag.item_id.to_i).last
+    counter = @available.item_count
+    @available.item_count = counter + 1
+    @available.save
+    
     redirect_to tags_path(:item => current_user.store.current_item_id)
   end
 

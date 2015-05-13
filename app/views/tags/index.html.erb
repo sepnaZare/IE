@@ -3,50 +3,71 @@
   <h1><%=t '.title', :default => t('tags') %></h1>
 </div>
 
+
 <div class="container">
-<table class="table table-striped" dir="rtl">
-  <thead>
+
+  <table class="table table-stripped new_table" id="tags_table" dir="rtl">
     <tr>
-      <th style="text-align:center">
-        <%= model_class.human_attribute_name(t(:id)) %>
-      </th>
       <th style="text-align:center"><%= model_class.human_attribute_name(t(:item)) %></th>
-      <th style="text-align:center"><%= t('item_price') %></th>
       <th style="text-align:center"><%= model_class.human_attribute_name(t(:is_sold)) %></th>
       <th style="text-align:center"><%= model_class.human_attribute_name(t(:tag_serial)) %></th>
-      <th style="text-align:center"><%= model_class.human_attribute_name(t(:created_at)) %></th>
-      <th></th><!-- 
-      <th style="text-align:center"><%=t '.actions', :default => t("helpers.actions") %></th> -->
+      <th></th>
+      <th></th>
     </tr>
-  </thead>
-  <tbody align="center">
-    <% @tags.each do |tag| %>
-      <tr>
-        <td><%= link_to tag.id, tag_path(tag) %></td>
-      
+
+    <% @tags.each do |tag|%>
+      <tr align="center">
         <td><%= tag.item.name %></td>
-        <td><%= tag.item.price%></td>
-        <td><%= tag.is_sold %></td>
-        <td><%= tag.tag_serial %></td>
-        <td><%= tag.created_at.strftime("%y-%m-%d") %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <% if tag.is_sold == true %>
+            <%= 'فرخته شده'%>
+          <% else %>
+            <%= 'فروخته نشده'%>
+          <%end%>
+        </td>
+        <td><%= tag.tag_serial %></td>
+        <td>
+          <%= link_to t('edit', :default => t("helpers.links.edit")),
                       edit_tag_path(tag), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('destroy', :default => t("helpers.links.destroy")),
                       tag_path(tag),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
+        <td><div class="arrow"></div></td>
+      </tr>
+
+      <tr>
+        <td colspan="5">
+          <div class="first_div_in_table">
+            <div class="third_div_in_table">
+              <h5>اطلاعات دیگر</h5>
+              <ul>
+                <li>
+                  <span>شناسه تگ: </span><%= link_to tag.id, tag_path(tag)%>
+                </li>
+                <li>
+                  <span>قیمت: </span><%= tag.item.price%><span> تومان</span>
+                </li>
+                <li>
+                  <span>تاریخ ثبت: </span><%= tag.created_at.strftime("%y-%m-%d")%>
+                </li>
+              </ul>
+          </div>
+        </div>
+  
+        </td>
+        
       </tr>
     <% end %>
-  </tbody>
-</table>
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_tag_path,
-            :class => 'btn btn-primary' %>
+  </table>
+
+
+  <%= link_to t('new', :default => t("helpers.links.new")),
+              new_tag_path,
+              :class => 'btn btn-primary' %>
 
 </div>
 
 <div style="clear: both; padding-top:100px"></div>
-
