@@ -11,6 +11,7 @@ class AvailablesController < ApplicationController
   # GET /availables/1
   # GET /availables/1.json
   def show
+    @availables = Available.all
   end
 
   # GET /availables/new

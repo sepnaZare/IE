@@ -1221,10 +1221,25 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 }
 
 
-<<<<<<< Updated upstream
-
-=======
-.btn-color{
-  color: red;
+.col-right {
+  margin-left: 3%;
+  text-align: right;
 }
->>>>>>> Stashed changes
+
+
+.col-left {
+  margin-right: 3%;
+  text-align: right;
+}
+
+
+.my-container {
+  padding-right:15%;
+  padding-left:10%;
+  margin-right:auto;
+  margin-left:auto
+}
+
+
+
+
