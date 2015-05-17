@@ -9,17 +9,23 @@ class TagsController < ApplicationController
   def add_tag
     @tag = Tag.new
     @tag.is_sold = false
-    @tag.item_id = current_user.store.current_item_id
+    # @tag.item_id = current_user.store.current_item_id
+    @temp = Store.find(params[:store_id])
+    @tag.item_id = @temp.current_item_id  
     @tag.tag_serial = params[:tag_serial]
-    @tag.store_id = current_user.store.id
+    # @tag.store_id = current_user.store.id
+    @tag.store_id = params[:store_id]
     @tag.save
-    @available = Available.where(item_id: @tag.item_id, store_id: current_user.store.id).last
+    @available = Available.where(item_id: @tag.item_id, store_id: @tag.store_id).last
     #  Availabe.find(:item_id => @tag.item_id.to_i).last
     counter = @available.item_count
     @available.item_count = counter + 1
     @available.save
     
-    redirect_to tags_path(:item => current_user.store.current_item_id)
+    if user_signed_in?
+      redirect_to tags_path(:item => current_user.store.current_item_id)
+    end
+    
   end
 
   def index
