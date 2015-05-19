@@ -292,3 +292,5 @@ fa:
   edit: 'ویرایش'
   destroy: 'حذف'
   company_owner: 'مدیر فروشگاه'
+  description: 'توضیح محصول'
+

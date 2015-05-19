@@ -1179,7 +1179,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 
 /* profile */
-.profile{
+.profile {
   
 }
 
@@ -1187,24 +1187,26 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   font-size: 15px;
 }
 
-.style_image{
-  box-shadow: 10px 10px 5px #ccc;
-  border-radius:2px;
-  border:1px grey;
-
+.style_image img {
+  width: 280px;
+  height: 320px;
+  padding: 25px;
+  border: 1px solid #C8C8C8;
+  background-color: white;
+  border-radius: 5px;
 }
 
-.store_image img{
+.store_image img {
   width: 500px;
   height: 150px;
 }
 
-.fa-right-text{
+.fa-right-text {
   direction: rtl;
 }
 
 
-.fix-size{
+.fix-size {
   max-width: 100px;
   max-height: 120px;
   min-width: 100px;
@@ -1214,10 +1216,9 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 .fonts-family {
   font-family: 'Koodak', sans-serif;
-  font-weight: 200;
+/*  font-weight: 200;
   color: #fff;
-  font-size: 18px;
-  font-weight: 200;
+  font-size: 18px;*/
 }
 
 
@@ -1241,5 +1242,10 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 }
 
 
-
+.one-line {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
 

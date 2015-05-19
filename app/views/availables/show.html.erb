@@ -4,12 +4,7 @@
 </div>
 
 
-
-
-
 <div style="clear: both; padding-top:20px"></div>
-
-
 
 
 <div class="single-product-area">
@@ -17,52 +12,19 @@
     <div class="my-container">
         <div class="row">
 
-            <div class="col-md-3 col-right">
-
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">جستجوی محصولات</h2>
-                    <form action="">
-                        <input type="text" placeholder="نام محصول را وارد کنید" class="text-right">
-                        <input type="submit" value="جستجو">
-                    </form>
-                </div>
-
-                <br><br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-
-
-
-
             
-            <div class="col-md-8 col-left">
+            <div class="col-md-8 col-right">
                 <div class="product-content-right">
 <!--                     <div class="product-breadcroumb">
                         <a href="">Home</a>
                         <a href="">Category Name</a>
                         <a href="">Sony Smart TV - 2015</a>
-                    </div> -->
-                    
+                    </div>
+ -->                    
 
                     <div class="row">
-                        <div class="col-sm-4 col-left">
-                            <div class="product-images">
+                        <div class="col-sm-4 col-right">
+                            <div class="product-images style_image">
                                 <div class="product-main-img">
                                     <%= image_tag @available.item.item_image %>
                                 </div>
@@ -77,56 +39,65 @@
                         </div>
 
 
-
-                        <div class="col-sm-6">
+                        <div class="col-sm-7">
                             <div class="product-inner">
                                 <h2 class="product-name"><%= @available.item.name %></h2>
-
+                                <br>
 
                                 <div class="product-inner-category">
-                                    <strong><%= t('item_company') %>: </strong><%= @available.item.item_company %><br>
-                                    <strong><%= t('item_type') %>: </strong><%= @available.item.item_type %><br>
-                                    <strong><%= t('store_name') %>: </strong><%= @available.store.company_name %>
+                                    <p><h4>:<%= t('item_company') %></h4>
+                                    <%= @available.item.item_company %></p>
+                                    <br>
+
+                                    <p><h4>:<%= t('item_type') %></h4>
+                                    <%= @available.item.item_type %></p>
+                                    <br>
+
+                                    <p><h4>:<%= t('store_name') %></h4>
+                                    <%= @available.store.company_name %></p>
+                                    <br>
+
+                                    <p><h4>:<%= t('item_price') %></h4>
+                                    <%= "تومان " + @available.item.price %></p>
                                 </div> 
 
-
-                                <div class="product-inner-price">
-                                    <ins><%= t('item_price') %>: <%= @available.item.price %></ins>
-                                </div>    
                                 
-                                <form action="" class="cart">
+                              <!--   <form action="" class="cart">
                                     <div class="quantity">
                                         <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
                                     </div>
                                     <button class="add_to_cart_button" type="submit">افزودن به لیست خرید</button>
                                 </form>   
-                                
-<!--                                 <div class="product-inner-category">
+ -->                                
+                               <!--  <div class="product-inner-category">
                                     <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
-                                </div>  -->
-                                
+                                </div> 
+ -->                                
 
 
+                                <div style="clear: both; padding-top:70px"></div>
 
-<!--                                 <div role="tabpanel">
-                                    <ul class="product-tab" role="tablist">
-                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">توضیح</a></li>
+                                <div role="tabpanel">
+                                    <ul class="product-tab fonts-family" role="tablist">
                                         <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">نظرات</a></li>
+                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">توضیح</a></li>
                                     </ul>
-                                    <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                            <h2>توضیح محصول</h2>  
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>
 
-                                            <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                                    <div class="tab-content">
+
+                                        <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                            <h2><%= t('description') %></h2>  
+                                            <div class="fonts-family"><%= @available.item.description %></div>
                                         </div>
+
                                         <div role="tabpanel" class="tab-pane fade" id="profile">
                                             <h2>نظرات کاربران</h2>
                                             <div class="submit-review">
-                                                <p><label for="name">Name</label> <input name="name" type="text"></p>
-                                                <p><label for="email">Email</label> <input name="email" type="email"></p>
-                                                <div class="rating-chooser">
-                                                    <p>Your rating</p>
+                                                <p><label for="name" class="fonts-family">نام</label> <input name="name" type="text"></p>
+                                                <p><label for="email" class="fonts-family">ایمیل</label> <input name="email" type="email"></p>
+
+                                                <!-- div class="rating-chooser">
+                                                    <p>امتیاز</p>
 
                                                     <div class="rating-wrap-post">
                                                         <i class="fa fa-star"></i>
@@ -136,21 +107,36 @@
                                                         <i class="fa fa-star"></i>
                                                     </div>
                                                 </div>
-                                                <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
-                                                <p><input type="submit" value="ارسال"></p>
+ -->
+                                                <p><label for="review" class="fonts-family">نظر</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+                                                <p><input type="submit" value="ارسال" class="fonts-family"></p>
                                             </div>
                                         </div>
+
                                     </div>
-                                </div> -->
-
-
-                                
+                                </div>
+    
                             </div>
                         </div>
 
 
-                        <% if user_signed_in? %>
-                          <% if not current_user.store.id.blank? %>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 col-left">
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">جستجوی محصولات</h2>
+                        <form action="">
+                            <input type="text" placeholder="نام محصول را وارد کنید" class="text-right">
+                            <input type="submit" value="جستجو">
+                        </form>
+                    </div>
+                    <br><br><br>
+
+                    <% if user_signed_in? %>
+                        <% if not current_user.store.id.blank? %>
                             <% if current_user.store.id == @available.store.id %>
                               <div style="clear:both; padding-top:50px" align="center">
                               <%= link_to t('back', :default => t("helpers.links.back")),
@@ -164,12 +150,12 @@
                                             :class => 'btn btn-danger', :method => :get  %>
                               </div>
                             <% end %>
-                          <% end %>
                         <% end %>
+                    <% end %>
 
-                        </div>
-                    </div>
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -182,7 +168,7 @@
 
 
 
-<div class="maincontent-area" style="clear: both; padding-top:20px">
+<div class="maincontent-area" style="clear: both; padding-top:100px">
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
@@ -203,7 +189,7 @@
                                         <div class="product-f-image">
                                             <%= image_tag(availableItem.item.item_image, :alt => "") %>
                                             <div class="product-hover">
-                                                <%= link_to(t('see_details'), available_path(availableItem.item) ,:class => "fa fa-link view-details-link fa-right-text", :method=>'get') %>
+                                                <%= link_to(t('see_details'), available_path(availableItem) ,:class => "fa fa-link view-details-link fa-right-text", :method=>'get') %>
                                             </div>
                                         </div>
 
