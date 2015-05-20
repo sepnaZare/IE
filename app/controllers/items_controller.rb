@@ -85,10 +85,10 @@ class ItemsController < ApplicationController
     end
 
     def has_store
-      if current_user.store.blank?
-        flash[:error] = "unauthorized access"
-        redirect_to root_path
-        false
-      end
+      # if current_user.store.blank?
+      #   flash[:error] = "unauthorized access"
+      #   redirect_to root_path
+      #   false
+      # end
     end
 end

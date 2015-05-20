@@ -11,7 +11,7 @@
 <%= form_for :usage, :url =>{ :controller => :usages, :action => :show_with_cart}, :method => :get do 
   |f| %>
 <p align="center" style="margin-right:50px">
-    <%= f.submit t("cart_id") %>
+    <%= f.submit t("cart_id"), :class => 'btn btn-primary fonts-family' %>
     <%= f.number_field :cart_id %>
   </p>
   <% end %>
@@ -54,11 +54,8 @@
             :class => 'btn btn-primary' %>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
+ <div style="clear: both; padding-top:70px"></div>
+
+

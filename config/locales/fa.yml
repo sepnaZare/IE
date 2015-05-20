@@ -295,3 +295,6 @@ fa:
   description: 'توضیح محصول'
   password: 'رمز عبور'
   password_repeat: 'تکرار رمز عبور'
+  all_items: 'همه'
+
+  

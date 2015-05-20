@@ -1188,17 +1188,21 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 }
 
 .style_image img {
-  width: 280px;
+  width: 300px;
   height: 320px;
-  padding: 25px;
+  padding: 10px;
   border: 1px solid #C8C8C8;
   background-color: white;
   border-radius: 5px;
 }
 
 .store_image img {
-  width: 500px;
-  height: 150px;
+  width: 700px;
+  height: 250px;
+  border: 1px solid #C8C8C8;
+  background-color: white;
+  border-radius: 5px;
+
 }
 
 .fa-right-text {

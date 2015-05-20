@@ -49,6 +49,7 @@
         
         
         <td>
+          <% if !current_user.blank? %>
           <% if current_user.store.availables.find_by_item_id(item.id).blank? %>
             <!-- 
             <%= link_to 'Add this Item to store' , availables_path , :method => :POST%>
@@ -62,6 +63,7 @@
           
           <% else %>
             <%= t('already_have_item')%>
+          <% end %>
           <% end %>
         </td>
         <td><div class="arrow"></div></td>
@@ -86,8 +88,13 @@
   </table>
 
 
-<%= link_to t('new_item') , new_item_path, :default => t("helpers.links.new"),
+
+<% if !current_user.blank? %>
+  <% if current_user.store.availables.find_by_item_id(item.id).blank? %>
+    <%= link_to t('new_item') , new_item_path, :default => t("helpers.links.new"),
             :class => 'btn btn-primary btn-color' %>
+  <% end %>
+<% end %>
 
 
 </div>
