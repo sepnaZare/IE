@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_filter :has_store
+  before_filter :has_store, except: [:show, :index]
 
 
   # GET /items
@@ -85,10 +85,10 @@ class ItemsController < ApplicationController
     end
 
     def has_store
-      # if current_user.store.blank?
-      #   flash[:error] = "unauthorized access"
-      #   redirect_to root_path
-      #   false
-      # end
+      if current_user.store.blank?
+        flash[:error] = "unauthorized access"
+        redirect_to root_path
+        false
+      end
     end
 end

@@ -238,8 +238,8 @@
                         <%= link_to(t(:all_items), items_path ,:class => "wid-view-more btn btn-primary fonts-family", :method=>'get') %>
 
                         <div class="single-wid-product">
+                           <% if not @items.blank? %>
                             <a href="single-product.html">
-                           
                             <%= image_tag(@items.first.item_image, :class => "product-thumb") %>
                             </a>
                             <h2><%= link_to(@items.first.name, item_path(@items.first) ,:class => "fa-right-text", :method=>'get') %></h2>
@@ -253,6 +253,7 @@
                             <div class="product-wid-price">
                                 <ins><%= @items.first.price %></ins>
                             </div>                            
+                            <%end%>
                         </div>
 
 
@@ -266,6 +267,8 @@
                         <h2 class="product-wid-title">جدیدترین محصولات</h2>
                         <%= link_to(t(:all_items), items_path ,:class => "wid-view-more btn btn-primary fonts-family", :method=>'get') %>
                         <div class="single-wid-product">
+                           <% if not @items.blank? %>
+
                             <a href="single-product.html">
                            
                             <%= image_tag(@items.last.item_image, :class => "product-thumb") %>
@@ -281,6 +284,7 @@
                             <div class="product-wid-price">
                                 <ins><%= @items.last.price %></ins>
                             </div>                            
+                            <%end%>
                         </div>
 
                     </div>
@@ -295,6 +299,8 @@
                         <h2 class="product-wid-title">جدیدترین فروشگاه‌ها</h2>
                         <%= link_to(t(:all_items), stores_path ,:class => "wid-view-more btn btn-primary fonts-family", :method=>'get') %>
                         <div class="single-wid-product">
+                           <% if not @stores.blank? %>
+
                             <a href="single-product.html">
                            
                             <%= image_tag(@stores.last.store_image, :class => "product-thumb") %>
@@ -307,6 +313,7 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div> -->
+                            <%end%>
                         </div>
 
 
