@@ -293,4 +293,5 @@ fa:
   destroy: 'حذف'
   company_owner: 'مدیر فروشگاه'
   description: 'توضیح محصول'
-
+  password: 'رمز عبور'
+  password_repeat: 'تکرار رمز عبور'

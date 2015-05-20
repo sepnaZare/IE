@@ -1,60 +1,92 @@
 <%- model_class = Item -%>
 <div class="page-header" style="text-align:right; padding-right: 50px">
-  <h1><%=t '.title', :default => t("item") %></h1>
-</div>
-<!-- 
-<div class="container" align="center">
-  <table dir="rtl" style="border:#FF3300 1px solid; border-collapse:collapse">
-    <tr style="margin-top:50px">
-      <th style="margin-top:200px">sdfds</th>
-      <th>dfs</th>
-    </tr>
-    <tr style="margin:20px">
-      <td>dsf</td>
-      <td>dfsadgf</td>
-    </tr>
-  </table>
-</div>
- -->
-<!-- <br>
-<br>
-<br>
-<br>
-<br>
- -->
-<div class="container" align="center" style="padding:50px">
-
-<dl class="dl-horizontal" style="text-align:right; margin-right: 20%; padding-top: 50px; padding-bottom:50px; padding-right:20%; float:center">
-  <dt></dt>
-  <dd><div class="img-rounded"><%= image_tag @item.item_image %></div></dd>
-  <dt style="float:right"><strong>:<%= model_class.human_attribute_name(t(:name)) %></strong></dt>
-  <dd style="float:right"><%= @item.name %></dd>
-  <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:price)) %></strong></dt>
-  <dd style="float:right"><%= @item.price %></dd>
-  <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:item_type)) %></strong></dt>
-  <dd style="float:right"><%= @item.item_type %></dd>
-  <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:item_company)) %></strong></dt>
-  <dd style="float:right"><%= @item.item_company %></dd>
-  <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:item_code)) %></strong></dt>
-  <dd style="float:right"><%= @item.item_code %></dd>
-  <dt style="float:right; clear:both"><strong>:<%= model_class.human_attribute_name(t(:description)) %></strong></dt>
-  <dd style="float:right"><%= @item.description %></dd>
-</dl>
-
-
-<div style="clear:both; padding-top:50px" align="center">
-<%= link_to t('back', :default => t("helpers.links.back")),
-              items_path, :class => 'btn btn-default'  %>
-<%= link_to t('edit', :default => t("helpers.links.edit")),
-              edit_item_path(@item), :class => 'btn btn-default' %>
-<%= link_to t('destroy', :default => t("helpers.links.destroy")),
-              item_path(@item),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<div style="clear: both; padding-top:20px"></div>
+
+
+<div class="single-product-area">
+    <!-- <div class="zigzag-bottom"></div> -->
+    <div class="my-container">
+        <div class="row">
+            
+            <div class="col-md-8 col-right">
+                <div class="product-content-right">
+                    <div class="row">
+                        <div class="col-sm-4 col-right">
+                            <div class="product-images style_image">
+                                <div class="product-main-img">
+                                    <%= image_tag @item.item_image %>
+                                </div>
+                                <!-- <div class="product-gallery">
+                                    <img src="img/product-thumb-1.jpg" alt="">
+                                    <img src="img/product-thumb-2.jpg" alt="">
+                                    <img src="img/product-thumb-3.jpg" alt="">
+                                    <img src="img/product-thumb-4.jpg" alt="">
+                                </div> -->
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-7">
+                            <div class="product-inner">
+                                <h2 class="product-name"><%= @item.name %></h2>
+                                <br>
+
+                                <div class="product-inner-category">
+                                    <p><h4>:<%= t('item_company') %></h4>
+                                    <%= @item.item_company %></p>
+                                    <br>
+
+                                    <p><h4>:<%= t('item_type') %></h4>
+                                    <%= @item.item_type %></p>
+                                    <br>
+
+                                    <p><h4>:<%= t('item_price') %></h4>
+                                    <%= "تومان " + @item.price %></p>
+                                    <br>
+
+                                    <p><h4>:<%= t('description') %></h4>
+                                    <%= @item.description %></p>
+                                </div> 
+
+
+                                <div style="clear: both; padding-top:70px"></div>
+    
+                            </div>
+                        </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <% if user_signed_in? %>
+                    <% if not current_user.store.id.blank? %>
+                          <div style="clear:both; padding-top:50px" align="center">
+                          <%= link_to t('back', :default => t("helpers.links.back")),
+                                        items_path, :class => 'btn btn-default', :method=>'get'  %>
+                          <%= link_to t('edit', :default => t("helpers.links.edit")),
+                                        edit_item_path(@item), :class => 'btn btn-default', :method=>'get', :method=>'get' %>
+                          <%= link_to t('destroy', :default => t("helpers.links.destroy")),
+                                        item_path(@item),
+                                        :method => 'delete',
+                                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                                        :class => 'btn btn-danger' %>
+                          </div>
+                    <% end %>
+                <% end %>
+
+
+            </div>
+        </div>
+    </div>
+
 </div>
-<div style="clear: both; padding-top:100px"></div>
+</div>
+
 
 
