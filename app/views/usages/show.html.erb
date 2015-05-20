@@ -4,30 +4,83 @@
 </div>
 
 <div class="container">
-<dl class="dl-horizontal"  style="text-align:right; margin-right: 20%; padding-top: 50px; padding-bottom:50px; float:right">
-  <!-- <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @usage.user_id %></dd> -->
-  <dt style="float:right; clear:both; margin-top:15px"><strong>:<%= model_class.human_attribute_name(t(:cart_id))%></strong></dt>
-  <dd style="float:right; margin-top:15px"><%= @usage.cart_id.to_s.tr('0123456789','۰۱۲۳۴۵۶۷۸۹') %></dd>
-  </br>
-  </br>
-  </br>
-  <% @shoppings.each do |s| %>
-    <dt style="float:right; clear:right; margin:15px 40px 0px 0px; padding-left:20px; width:auto">:کالا</dt>
-    <dd style="float:right; margin:15px 0px 0px 0px;"><%= s.tag.item.name%></dd>
-    <dt style="float:right; margin:15px 30px 0px 0px; padding-left:20px; width:auto">:  قیمت</dt>
-    <dd style="float:right; margin:15px 0px 0px 0px"><%= s.tag.item.price%></dd>
-  <% end %>
+
+
+<div class="cart" >
+  <strong><%= model_class.human_attribute_name(t(:cart_id))%></strong>
+  <%= @usage.cart_id.to_s.tr('0123456789','۰۱۲۳۴۵۶۷۸۹') %>
+
+</div>
   
-  <dt style="float:right; clear:both; margin-top:60px; margin-right:200px; width:auto">
-    <strong><%= 'جمع کل'%></strong>
-  </dt>
-  <dd style="float:right; margin-top:60px; padding-right:20px;">
-     <%= @price.to_s.tr('0123456789','۰۱۲۳۴۵۶۷۸۹')%>
-  </dd>
-</dl>
-<div style="clear:both; margin-right:100px; margin-bottom:100px; margin-top:30px" align="center">
-  <%= link_to 'تایید و پرداخت' , root_path %>
+  </br>
+
+
+<div class="show-table">
+<table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
+
+  <col width="10%">
+  <col width="50%">
+  <col width="25%">
+  <!-- Table Header -->
+
+  <thead>
+    <tr>
+      <th ></th>
+      <th >کالا</th>
+      <th > قیمت</th>
+
+      
+    </tr>
+  </thead>
+  <tbody>
+        <% @num=1 %>
+        <% @shoppings.each do |s| %>
+          <% if @num%2==0  %>
+              <tr class="even">
+                  <td><%= @num %></td>
+                  <td><%= s.tag.item.name%></td>
+                  <td><%= s.tag.item.price%></td>
+                  
+              </tr>
+          
+          <% else %>
+               <tr class="odd">
+                  <td><%= @num %></td>
+                  <td><%= s.tag.item.name%></td>
+                  <td><%= s.tag.item.price%></td>
+              </tr>
+          <% end %>
+          <% @num= @num+1 %>
+       <% end %>
+        
+        
+   <br/>
+
+    
+  
+        
+          
+           
+  </table>
+
+
+      <div class="price">
+        <strong><%= 'جمع کل'%></strong>
+        <%= @price.to_s.tr('0123456789','۰۱۲۳۴۵۶۷۸۹')%> 
+        <br/>
+        <br/>
+         <%= link_to 'تایید و پرداخت' , root_path ,:class => "btn btn-primary"%>      
+     </div>
+     <br/>
+     
+     <br/>
+     <br/>
+     <br/>
+     <div>
+       <p></p>
+     </div>
+<br/>
+     
 </div>
 
 </div>
