@@ -1,13 +1,16 @@
 <%- model_class = Cart -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+<div class="page-header" style="text-align:right; padding-right: 50px">
+  <h1><%=t '.title', :default => t('cart') %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:store_id) %>:</strong></dt>
-  <dd><%= @cart.store_id %></dd>
-</dl>
+<div class="container" align="right" style="text_align:right">
+<div class="row">
+<p><h4 style="float:right; padding-left:20px"> :<%= t('store_name') %></h4>
+<h6 style="float:right"><%= @cart.store.company_name %></h6>
+</p>
+</div>
 
+<div align="left">
 <%= link_to t('back', :default => t("helpers.links.back")),
               carts_path, :class => 'btn btn-default'  %>
 <%= link_to t('edit', :default => t("helpers.links.edit")),
@@ -17,3 +20,12 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+
+              </div>
+
+</div>
+
+
+
+ <div style="clear: both; padding-top:70px"></div>
+

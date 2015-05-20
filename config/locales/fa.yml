@@ -296,5 +296,6 @@ fa:
   password: 'رمز عبور'
   password_repeat: 'تکرار رمز عبور'
   all_items: 'همه'
-
+  carts: 'چرخ‌های خرید'
+  cart: 'چرخ خرید'
   

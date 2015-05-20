@@ -38,7 +38,7 @@
       <tr>
         <td><%= link_to usage.id, usage_path(usage) %></td>
         <td><%= usage.cart_id %></td>
-        <td><%=l usage.created_at %></td>
+        <td><%= usage.created_at.strftime("%y-%m-%d") %></td>
       </tr>
     <% end %>
   </tbody>

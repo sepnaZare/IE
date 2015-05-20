@@ -1,22 +1,23 @@
 <%- model_class = Cart -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+<div class="page-header" style="text-align:right; padding-right: 50px">
+  <h1><%=t '.title', :default => t('carts') %></h1>
 </div>
-<table class="table table-striped">
+<div class="container">
+<table class="table table-striped" dir="rtl">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:store_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th style="text-align:center"><%= model_class.human_attribute_name(t(:id)) %></th>
+      <th style="text-align:center"><%= model_class.human_attribute_name(t(:store_name)) %></th>
+      <th style="text-align:center"><%= model_class.human_attribute_name(t(:created_at)) %></th>
+      <!-- <th style="text-align:center"><%=t '.actions', :default => t("helpers.actions") %></th> -->
     </tr>
   </thead>
-  <tbody>
+  <tbody align="center">
     <% @carts.each do |cart| %>
       <tr>
         <td><%= link_to cart.id, cart_path(cart) %></td>
-        <td><%= cart.store_id %></td>
-        <td><%=l cart.created_at %></td>
+        <td><%= cart.store.company_name %></td>
+        <td><%= cart.created_at.strftime("%y-%m-%d") %></td>
         <td>
           <%= link_to t('edit', :default => t("helpers.links.edit")),
                       edit_cart_path(cart), :class => 'btn btn-default btn-xs' %>
@@ -34,3 +35,7 @@
 <%= link_to t('new', :default => t("helpers.links.new")),
             carts_path, :method => :post, 
             :class => 'btn btn-primary' %>
+            </div>
+
+<div style="clear: both; padding-top:70px"></div>
+
