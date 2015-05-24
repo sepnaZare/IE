@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512204308) do
+ActiveRecord::Schema.define(version: 20150519191355) do
 
   create_table "availables", force: :cascade do |t|
     t.integer  "item_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150512204308) do
     t.string   "item_company"
     t.string   "item_code"
     t.string   "item_image"
+    t.string   "description"
   end
 
   create_table "profiles", force: :cascade do |t|

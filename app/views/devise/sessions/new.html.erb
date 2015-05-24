@@ -1,64 +1,5 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-<br/>
-<br />
-  <div class="login">
-        <div class="container">
-            <!-- Codrops top bar -->
-            <section>       
-                <div id="container_demo" >
-                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-                    <a class="hiddenanchor" id="toregister"></a>
-                    <a class="hiddenanchor" id="tologin"></a>
-                    <div id="wrapper">
-                        <div id="login" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
-                                <h1>ورود کاربر</h1>
-                                <p > 
-
-                                <div style="text-align:right;">
-                                    <%= f.label :email , :for => "username" , :class => "uname" , :data_icon => "u"%>
-
-                                    <%= f.email_field :email, autofocus: true , :id => "username" , :name =>"username" ,:required =>"required", :type=>"text" ,:placeholder =>"myusername or mymail@mail.com" %>
-                                  </div>
-                                </p>
-                                <p> 
-                                <div style="text-align:right;">
-                                    <%= f.label :password,  :class => "youpasswd" , :data_icon => "p" %>
-                                    <%= f.password_field :password, autocomplete: "off", :id => "password" , :name => "password" , :required => "required" , :type => "password" , :placeholder => "password" %>
-                                    </div>
-                                   
-                                </p>
-                                <p class="keeplogin"> 
-                                  <div style="text-align:right;">
-                                    <%= f.check_box :remember_me ,:type => "checkbox" ,  :name => "loginkeeping" , :id => "loginkeeping" , :value => "loginkeeping" %>
-
-                                    <%= f.label :remember_me, :for => "loginkeeping" %>
-                                  </div>
-                               </p>
-                                <p class="login button"> 
-                                 
-                                <%= f.submit "ورود" , :class => "login button" %>
-                                </p>
-                                <p class="change_link">
-                                  Not a member yet ?
-                  
-                  <%= link_to  "ثبت نام" ,new_user_registration_path  , :class=> "to_register" %>
-                </p>
-
-
-                        </div>
-            
-                    </div>
-                </div>  
-            </section>
-
-        </div>
-
-
-</div>
-
-<!--<div class="login_form">
+<div class="login_form">
   <section >
   <div class="picture"></div>
   <h1>ورود کاربران</h1>
@@ -92,45 +33,9 @@
   <br/>
   <div >
     <%= f.submit "Log in" , :class => "buttons" %>
-  </div>-->
+  </div>
 <% end %>    
 
- <!-- <%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
 </section>
-</div>  -->
-
-
-<!--
-
-
-
-                            </form>
-                        </div>
-
-                        <div id="register" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
-                                <h1> Sign up </h1> 
-                                <p> 
-                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
-                                </p>
-                                <p> 
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
-                                </p>
-                                <p> 
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
-                                <p> 
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
-                                <p class="signin button"> 
-                  <input type="submit" value="Sign up"/> 
-                </p>
-                                <p class="change_link">  
-                  Already a member ?
-                  <a href="#tologin" class="to_register"> Go and log in </a>
-                </p>
-                            </form>-->
+</div>

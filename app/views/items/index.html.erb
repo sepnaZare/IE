@@ -90,10 +90,8 @@
 
 
 <% if !current_user.blank? %>
-  <% if current_user.store.availables.find_by_item_id(item.id).blank? %>
     <%= link_to t('new_item') , new_item_path, :default => t("helpers.links.new"),
             :class => 'btn btn-primary btn-color' %>
-  <% end %>
 <% end %>
 
 

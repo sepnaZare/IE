@@ -1,15 +1,31 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
   before_action :see_all_tags, only: [:index]
-  before_filter :add_tag_filter , only: [:add_tag]
-  before_filter :has_store
-
 
 
   # GET /tags
   # GET /tags.json
 
   def add_tag
+    @tag = Tag.new
+    @tag.is_sold = false
+    # @tag.item_id = current_user.store.current_item_id
+    @temp = Store.find(params[:store_id])
+    @tag.item_id = @temp.current_item_id  
+    @tag.tag_serial = params[:tag_serial]
+    # @tag.store_id = current_user.store.id
+    @tag.store_id = params[:store_id]
+    @tag.save
+    @available = Available.where(item_id: @tag.item_id, store_id: @tag.store_id).last
+    #  Availabe.find(:item_id => @tag.item_id.to_i).last
+    counter = @available.item_count
+    @available.item_count = counter + 1
+    @available.save
+    
+    if user_signed_in?
+      redirect_to tags_path(:item => current_user.store.current_item_id)
+    end
+    
   end
 
   def index
@@ -108,44 +124,7 @@ class TagsController < ApplicationController
 
     def see_all_tags
       if params[:item].blank?
-        redirect_to tags_path
-      end
-    end
-
-    def add_tag_filter
-
-      if Tag.find_by(tag_serial: params[:tag_serial]).blank?
-        @content = "nok"
-      else
-        @content = "ok"
-        @tag = Tag.new
-        @tag.is_sold = false
-        # @tag.item_id = current_user.store.current_item_id
-        @temp = Store.find(params[:store_id])
-        @tag.item_id = @temp.current_item_id  
-        @tag.tag_serial = params[:tag_serial]
-        # @tag.store_id = current_user.store.id
-        @tag.store_id = params[:store_id]
-        @tag.save
-        @available = Available.where(item_id: @tag.item_id, store_id: @tag.store_id).last
-        #  Availabe.find(:item_id => @tag.item_id.to_i).last
-        counter = @available.item_count
-        @available.item_count = counter + 1
-        @available.save
-      end
-
-      
-    end
-
-    def has_store
-      if current_user.present?
-        if current_user.store.blank?
-          flash[:error] = "unauthorized access"
-          redirect_to root_path
-          false
-        end
-      else
-        flash[:error] = "unauthorized access"
         redirect_to root_path
       end
     end
+end

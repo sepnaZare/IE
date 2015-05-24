@@ -7,7 +7,7 @@
                     <div class="user-menu" align="right" margin-right:"100px">
                         <ul>
                             <% if user_signed_in? %>
-                                <li><%= link_to(" خروج از سایت", destroy_user_session_path ,:class => "fa fa-user fa-right-text", :method=>'delete') %></li>
+                                <li "font-family=Koodak"><%= link_to(" خروج از سایت", destroy_user_session_path, :class => "fa fa-user fa-right-text", :method=>'delete') %></li>
 
                                 <% if not current_user.store.blank? %>
                                     <li><%= link_to(" چرخ‌خریدهای فروشگاه", carts_path(), :class => "fa fa-shopping-cart fa-right-text", :method => 'get') %></li>

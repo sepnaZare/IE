@@ -624,7 +624,7 @@ width: 10px;
 .single-product-area .zigzag-bottom {background-color: #333333}
 
 .single-product-area {
-  padding: 80px 0 130px;
+  padding: 80px 0 20px;
 }
 
 
@@ -1332,12 +1332,14 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
 }
 .show-table  table tr.even td {
+  font-family: "Koodak";
   background: #76D7C4;
   background: -webkit-gradient(linear, left top, left bottom, from(#76D7C4), to(#74D5C2));
   background: -moz-linear-gradient(top,  #76D7C4, #74D5C2);
 }
 
 .show-table  table tr.odd td {
+  font-family: "Koodak";
   background: #E8F8F5;
   background: -webkit-gradient(linear, left top, left bottom, from(#E8F8F5), to(#E6F6F3));
   background: -moz-linear-gradient(top,  #E8F8F5 ,  #E6F6F3);
