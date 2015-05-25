@@ -53,14 +53,9 @@
 
 <div style="clear:both; padding-top:50px" align="center">
 <%= link_to t('back', :default => t("helpers.links.back")),
-              profiles_path, :class => 'btn btn-default'  %>
+              root_path, :method => 'get', :class => 'btn btn-default'  %>
 <%= link_to t('edit', :default => t("helpers.links.edit")),
-              edit_profile_path(@profile), :class => 'btn btn-default' %>
-<%= link_to t('destroy', :default => t("helpers.links.destroy")),
-              profile_path(@profile),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-default' %>
+              edit_profile_path(@profile), :method => 'get', :class => 'btn btn-default' %>
 </div>
 
 

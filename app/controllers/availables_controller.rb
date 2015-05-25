@@ -12,6 +12,8 @@ class AvailablesController < ApplicationController
   # GET /availables/1.json
   def show
     @availables = Available.all
+    @comments = Comment.all
+    @comment = Comment.new
   end
 
   # GET /availables/new

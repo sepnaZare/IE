@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  resources :comments
+
   resources :purchases
 
   resources :stores

@@ -205,6 +205,7 @@ fa:
         available: 'کالای موجود'
         tag: 'تگ'
         usage: 'خریدهای کاربر'
+        comment: 'دیدگاه'
     errors:
       <<: *errors
     attributes:
@@ -300,3 +301,7 @@ fa:
   cart: 'چرخ خرید'
   next: 'بعدی'
   prev: 'قبلی'
+  customer_name: 'نام'
+  customer_email: 'ایمیل'
+  customer_comment: 'دیدگاه'
+

@@ -91,25 +91,54 @@
                                         </div>
 
                                         <div role="tabpanel" class="tab-pane fade" id="profile">
-                                            <h2>نظرات کاربران</h2>
+                                            <h2>دیدگاه کاربران</h2>
                                             <div class="submit-review">
-                                                <p><label for="name" class="fonts-family">نام</label> <input name="name" type="text"></p>
-                                                <p><label for="email" class="fonts-family">ایمیل</label> <input name="email" type="email"></p>
 
-                                                <!-- div class="rating-chooser">
-                                                    <p>امتیاز</p>
 
-                                                    <div class="rating-wrap-post">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
+                                                <%= form_for(@comment, :remote => :true) do |f| %>
+                                                  <% if @comment.errors.any? %>
+                                                    <div id="error_explanation">
+                                                      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+                                                      <ul>
+                                                      <% @comment.errors.full_messages.each do |message| %>
+                                                        <li><%= message %></li>
+                                                      <% end %>
+                                                      </ul>
                                                     </div>
-                                                </div>
- -->
-                                                <p><label for="review" class="fonts-family">نظر</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
-                                                <p><input type="submit" value="ارسال" class="fonts-family"></p>
+                                                  <% end %>
+
+                                                  <div class="control-group">
+                                                    <%= f.label t(:customer_name), :class => 'control-label' %>
+                                                    <div class="controls">
+                                                      <%= f.text_field :customer_name, :class => 'form-control' %>
+                                                    </div>
+                                                    <%= error_span(@comment[:customer_name]) %>
+                                                  </div>
+                                                  <div class="control-group">
+                                                    <%= f.label t(:customer_email), :class => 'control-label' %>
+                                                    <div class="controls">
+                                                      <%= f.text_field :customer_email, :class => 'form-control' %>
+                                                    </div>
+                                                    <%= error_span(@comment[:customer_email]) %>
+                                                  </div>
+                                                  <div class="control-group">
+                                                    <%= f.label t(:customer_comment), :class => 'control-label' %>
+                                                    <div class="controls">
+                                                      <%= f.text_field :customer_comment, :class => 'form-control' %>
+                                                    </div>
+                                                    <%= error_span(@comment[:customer_comment]) %>
+                                                  </div>
+                                                  <div class="control-group">                                                    <div class="controls">
+                                                      <%= f.hidden_field :available_id, :value => @available.id %>
+                                                    </div>
+                                                    <%= error_span(@comment[:available_id]) %>
+                                                  </div>
+
+                                                  <%= f.submit nil, :class => 'btn btn-primary' %>
+                                                <% end %>
+
+
                                             </div>
                                         </div>
 
