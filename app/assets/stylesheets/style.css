@@ -796,6 +796,17 @@ form.cart {
     margin-bottom: 20px;
     width: 100%;
 }
+.submit-review h4 {
+    display: block;
+    font-size: 17px;
+}
+.submit-review-desc {
+    display: block;
+    font-size: 17px;
+    max-width: 200px;
+    float: right;
+    margin-left: 25px;
+}
 .rating-chooser {
     margin-bottom: 30px;
 }

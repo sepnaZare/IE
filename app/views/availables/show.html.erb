@@ -93,9 +93,20 @@
                                         <div role="tabpanel" class="tab-pane fade" id="profile">
                                             <h2>دیدگاه کاربران</h2>
                                             <div class="submit-review">
+                                                <% if !@available.comments.blank? %>
+                                                    <% @available.comments.each do |availableComment| %>
+                                                    <p><div class="submit-review-desc">:<%= t('customer_name') %></div>
+                                                    <%= availableComment.customer_name %>
+                                                    <br>
+                                                    <br>
+                                                    <div class="submit-review-desc">:<%= t('customer_comment') %></div>
+                                                    <%= availableComment.customer_comment %></p>
+                                                    <br>
 
+                                                    <% end %>
+                                                <% end %>
 
-                                                <%= form_for(@comment, :remote => :true) do |f| %>
+                                                <%= form_for(@comment) do |f| %>
                                                   <% if @comment.errors.any? %>
                                                     <div id="error_explanation">
                                                       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
